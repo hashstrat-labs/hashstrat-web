@@ -1,0 +1,236 @@
+
+import { roiDataForSwaps as poolRoiDataForSwaps  } from '../poolRoiCalculator';
+import { expect } from "chai";
+import { SwapInfo } from "../../../hooks/useIndex"
+
+import swaps_btc from "./pool_swaps.json"
+import usdc from "./token_usdc.json"
+import weth from "./token_eth.json"
+
+
+describe("Testing poolRoiDataForSwaps", () => {
+
+    describe("When no price move", () => {
+        const firstTimestamp = 1666949934
+        const latestTimestamp = 1671618365
+        const roiInfo = poolRoiDataForSwaps(
+            [{
+                "timestamp": `${firstTimestamp}`,
+                "side": "BUY",
+                "feedPrice": "150000000000",
+                "bought": "220763138745855471",
+                "sold": "333333334",
+                "depositTokenBalance": "1333333332",
+                "investTokenBalance": "220763138745855471"
+            }],
+
+            "150000000000",
+            latestTimestamp,
+            usdc,
+            weth
+        )
+
+        it('Has expected dates', () => {
+            // expect(sum(2, 2)).toEqual(4);
+            expect( roiInfo[0]['date'] ).to.be.equal( firstTimestamp );
+            expect( roiInfo[1]['date'] ).to.be.equal( latestTimestamp );
+        });
+
+        it('Has zero ROI', () => {
+            expect( roiInfo[1]['strategyROI'] ).to.be.equal( 0 );
+            expect( roiInfo[1]['buyAndHoldROI'] ).to.be.equal( 0 );
+        });
+
+        it('Has $100 model investment', () => {
+            expect( roiInfo[0]['strategyValue'] ).to.be.equal( 100 );
+            expect( roiInfo[1]['buyAndHoldValue'] ).to.be.equal( 100 );
+        });
+    });
+
+
+    describe("When price doubles", () => {
+        describe("pool is all invested", () => {
+            const firstTimestamp = 1666949934
+            const latestTimestamp = 1671618365
+            const roiInfo = poolRoiDataForSwaps(
+                [{
+                    "timestamp": `${firstTimestamp}`,
+                    "side": "BUY",
+                    "feedPrice": "150708740861",
+                    "bought": "220763138745855471",
+                    "sold": "333333334",
+                    "depositTokenBalance": "0",
+                    "investTokenBalance": "220763138745855471"
+                }],
+
+                "301417481722",
+                latestTimestamp,
+                usdc,
+                weth
+            )
+
+            it('Has 100% ROI', () => {
+                expect( roiInfo[1]['strategyROI'] ).to.be.equal( 100 );
+                expect( roiInfo[1]['buyAndHoldROI'] ).to.be.equal( 100 );
+            });
+
+        });
+
+        describe("pool is half cash", () => {
+            const firstTimestamp = 1666949934
+            const latestTimestamp = 1671618365
+            const roiInfo = poolRoiDataForSwaps(
+                [{
+                    "timestamp": `${firstTimestamp}`,
+                    "side": "BUY",
+                    "feedPrice": "150708740861",
+                    "bought": "220763138745855471",
+                    "sold": "333333334",
+                    "depositTokenBalance": "333333334",
+                    "investTokenBalance": "220763138745855471"
+                }],
+
+                "301417481722",
+                latestTimestamp,
+                usdc,
+                weth
+            )
+
+            it('Has 100% ROI', () => {
+                expect( roiInfo[1]['strategyROI'] ).to.be.equal( 50 );
+                expect( roiInfo[1]['buyAndHoldROI'] ).to.be.equal( 100 );
+            });
+        });
+
+        describe("pool is all cash", () => {
+            const firstTimestamp = 1666949934
+            const latestTimestamp = 1671618365
+            const roiInfo = poolRoiDataForSwaps(
+                [{
+                    "timestamp": `${firstTimestamp}`,
+                    "side": "SELL",
+                    "feedPrice": "150708740861",
+                    "bought": "333333334",
+                    "sold": "220763138745855471",
+                    "depositTokenBalance": "333333334",
+                    "investTokenBalance": "0"
+                }],
+
+                "301417481722",
+                latestTimestamp,
+                usdc,
+                weth
+            )
+
+            it('Has 100% ROI', () => {
+                expect( roiInfo[1]['strategyROI'] ).to.be.equal( 0 );
+                expect( roiInfo[1]['buyAndHoldROI'] ).to.be.equal( 100 );
+            });
+        });
+    });
+
+
+    describe("When price halves", () => {
+        describe("pool is all invested", () => {
+            const firstTimestamp = 1666949934
+            const latestTimestamp = 1671618365
+            const roiInfo = poolRoiDataForSwaps(
+                [{
+                    "timestamp": `${firstTimestamp}`,
+                    "side": "BUY",
+                    "feedPrice": "150708740862",
+                    "bought": "220763138745855471",
+                    "sold": "333333334",
+                    "depositTokenBalance": "0",
+                    "investTokenBalance": "220763138745855471"
+                }],
+
+                "75354370431",
+                latestTimestamp,
+                usdc,
+                weth
+            )
+
+            it('Has 100% ROI', () => {
+                expect( roiInfo[1]['strategyROI'] ).to.be.equal( -50 );
+                expect( roiInfo[1]['buyAndHoldROI'] ).to.be.equal( -50 );
+            });
+
+        });
+
+        describe("pool is half cash", () => {
+            const firstTimestamp = 1666949934
+            const latestTimestamp = 1671618365
+            const roiInfo = poolRoiDataForSwaps(
+                [{
+                    "timestamp": `${firstTimestamp}`,
+                    "side": "BUY",
+                    "feedPrice": "150708740862",
+                    "bought": "220763138745855471",
+                    "sold": "333333334",
+                    "depositTokenBalance": "333333334",
+                    "investTokenBalance": "220763138745855471"
+                }],
+
+                "75354370431",
+                latestTimestamp,
+                usdc,
+                weth
+            )
+
+            it('Has 100% ROI', () => {
+                expect( roiInfo[1]['strategyROI'] ).to.be.equal( -25 );
+                expect( roiInfo[1]['buyAndHoldROI'] ).to.be.equal( -50 );
+            });
+        });
+
+        describe("pool is all cash", () => {
+            const firstTimestamp = 1666949934
+            const latestTimestamp = 1671618365
+            const roiInfo = poolRoiDataForSwaps(
+                [{
+                    "timestamp": `${firstTimestamp}`,
+                    "side": "SELL",
+                    "feedPrice": "150708740862",
+                    "bought": "333333334",
+                    "sold": "220763138745855471",
+                    "depositTokenBalance": "333333334",
+                    "investTokenBalance": "0"
+                }],
+
+                "75354370431",
+                latestTimestamp,
+                usdc,
+                weth
+            )
+
+            it('Has 100% ROI', () => {
+                expect( roiInfo[1]['strategyROI'] ).to.be.equal( 0 );
+                expect( roiInfo[1]['buyAndHoldROI'] ).to.be.equal( -50 );
+            });
+        });
+    });
+
+
+
+    describe("When mutliple trades", () => {
+        const latestTimestamp = 1665092506
+        const roiInfo = poolRoiDataForSwaps(swaps_btc as SwapInfo[],
+            "1993288000000",
+            latestTimestamp,
+            usdc,
+            weth
+        )
+
+        it('Calculates all strategy ROI values', () => {
+            const strategyROI = roiInfo.map( it => it.strategyROI ).slice(0, 9)
+            expect( strategyROI ).to.eql( [-0, -0.28, -1.5, 2.13, -0.76, -2.96, -1.79, -1.44, -0.03] );
+        });
+
+        it('Calculates all buy and hold ROI values', () => {
+            const buyAndHoldROI = roiInfo.map( it => it.buyAndHoldROI ).slice(0, 9)
+            expect( buyAndHoldROI ).to.eql( [0, -1.41, -6.48, 6.43, -2.73, -9, -5.98, -5.16, -2.02] );
+        });
+    });
+
+});

@@ -1,0 +1,112 @@
+
+import {  roiDataForSwaps as poolRoiDataForSwaps  } from '../poolRoiCalculator';
+import { expect } from "chai";
+
+import swaps_btc from "./pool_swaps.json"
+import usdc from "./token_usdc.json"
+import weth from "./token_eth.json"
+
+
+describe("Testing poolRoiDataForSwaps when no swaps", () => {
+
+    describe("When no price move", () => {
+
+        const roiInfo = poolRoiDataForSwaps(
+            [
+                {
+                    "timestamp": "1",
+                    "side": "BUY",
+                    "feedPrice": "150000000000",
+                    "bought": "220763138745855471",
+                    "sold": "333333334",
+                    "depositTokenBalance": "1333333332",
+                    "investTokenBalance": "220763138745855471"
+                },
+                {
+                    "timestamp": "2",
+                    "side": "BUY",
+                    "feedPrice": "150000000000",
+                    "bought": "0",
+                    "sold": "0",
+                    "depositTokenBalance": "1333333332",
+                    "investTokenBalance": "220763138745855471"
+                },
+                {
+                    "timestamp": "3",
+                    "side": "BUY",
+                    "feedPrice": "150000000000",
+                    "bought": "0",
+                    "sold": "0",
+                    "depositTokenBalance": "1333333332",
+                    "investTokenBalance": "220763138745855471"
+                },
+            ],
+
+            "150000000000",
+            4,
+            usdc,
+            weth
+        )
+
+        it('Has expected dates', () => {
+            expect( roiInfo.map( it => Number(it.date) )).to.eql( [1, 2, 3, 4] );
+        });
+
+        it('Has zero ROI', () => {
+            expect( roiInfo.map( it => it.strategyROI )).to.eql( [0, 0, 0, 0] );
+            expect( roiInfo.map( it => it.buyAndHoldROI )).to.eql( [0, 0, 0, 0] );
+        });
+
+        it('Has $100 model investment', () => {
+            expect( roiInfo.map( it => it.strategyValue )).to.eql( [100, 100, 100, 100] );
+            expect( roiInfo.map( it => it.buyAndHoldValue )).to.eql( [100, 100, 100, 100] );
+        });
+    });
+
+
+    describe("When prices doubles", () => {
+
+        const roiInfo = poolRoiDataForSwaps(
+            [
+                {
+                    "timestamp": "1",
+                    "side": "BUY",
+                    "feedPrice": "120000000000",        // 1200 WETH/USDC
+                    "bought": "833333333333333333",     //  0.833 WETH
+                    "sold": "1000000000",               // 1000 USDC
+                    "depositTokenBalance": "0",
+                    "investTokenBalance": "833333333333333333" //  0.833 WETH
+                },
+                {
+                    "timestamp": "2",
+                    "side": "BUY",
+                    "feedPrice": "240000000000",        // 1200 WETH/USDC
+                    "bought": "833333333333333333",     //  0.833 WETH
+                    "sold": "1000000000",               // 1000 USDC
+                    "depositTokenBalance": "0",
+                    "investTokenBalance": "833333333333333333" //  0.833 WETH
+                },
+            ],
+
+            "240000000000",
+            3,
+            usdc,
+            weth
+        )
+
+        it('Has expected dates', () => {
+            expect( roiInfo.map( it => Number(it.date) )).to.eql( [1, 2, 3] );
+        });
+
+        it('Has zero ROI', () => {
+            expect( roiInfo.map( it => it.strategyROI )).to.eql( [0, 100, 100] );
+            expect( roiInfo.map( it => it.buyAndHoldROI )).to.eql( [0, 100, 100] );
+        });
+
+        it('Has $100 model investment', () => {
+            expect( roiInfo.map( it => it.strategyValue )).to.eql( [100, 200, 200] );
+            expect( roiInfo.map( it => it.buyAndHoldValue )).to.eql( [100, 200, 200] );
+        });
+    });
+
+});

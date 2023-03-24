@@ -1,0 +1,224 @@
+[
+    {
+        "poolId": "pool01v3a",
+        "weight": 1,
+        "priceInfo": {
+            "symbol": "wbtc",
+            "price": {
+                "type": "BigNumber",
+                "hex": "0x01854726c000"
+            },
+            "timestamp": 1672657880
+        },
+        "swaps": [
+            {
+                "timestamp": "1666360846",
+                "side": "BUY",
+                "feedPrice": "1906615000000",
+                "bought": "314349",
+                "sold": "60000000",
+                "depositTokenBalance": "40000000",
+                "investTokenBalance": "314349"
+            },
+            {
+                "timestamp": "1666949934",
+                "side": "BUY",
+                "feedPrice": "2020077286554",
+                "bought": "4929439",
+                "sold": "1000000000",
+                "depositTokenBalance": "666666666",
+                "investTokenBalance": "4929439"
+            },
+            {
+                "timestamp": "1667560065",
+                "side": "BUY",
+                "feedPrice": "2061571000000",
+                "bought": "22281",
+                "sold": "4602000",
+                "depositTokenBalance": "3068000",
+                "investTokenBalance": "22281"
+            }
+        ]
+    },
+    {
+        "poolId": "pool03v3a",
+        "weight": 1,
+        "priceInfo": {
+            "symbol": "wbtc",
+            "price": {
+                "type": "BigNumber",
+                "hex": "0x01854726c000"
+            },
+            "timestamp": 1672657880
+        },
+        "swaps": [
+            {
+                "timestamp": "1666949934",
+                "side": "BUY",
+                "feedPrice": "2020077286554",
+                "bought": "1637586",
+                "sold": "333333334",
+                "depositTokenBalance": "1333333332",
+                "investTokenBalance": "1637586"
+            },
+            {
+                "timestamp": "1667240296",
+                "side": "BUY",
+                "feedPrice": "2039548802197",
+                "bought": "1303352",
+                "sold": "266974561",
+                "depositTokenBalance": "5072516671",
+                "investTokenBalance": "7823596"
+            },
+            {
+                "timestamp": "1667672301",
+                "side": "BUY",
+                "feedPrice": "2131475500000",
+                "bought": "193324",
+                "sold": "41316446",
+                "depositTokenBalance": "785012480",
+                "investTokenBalance": "1445209"
+            },
+            {
+                "timestamp": "1668104308",
+                "side": "BUY",
+                "feedPrice": "1736150000000",
+                "bought": "1065400",
+                "sold": "186087718",
+                "depositTokenBalance": "3535666652",
+                "investTokenBalance": "7886073"
+            },
+            {
+                "timestamp": "1668536313",
+                "side": "BUY",
+                "feedPrice": "1693500000000",
+                "bought": "1068735",
+                "sold": "182339711",
+                "depositTokenBalance": "3464454526",
+                "investTokenBalance": "9201502"
+            },
+            {
+                "timestamp": "1668968319",
+                "side": "BUY",
+                "feedPrice": "1656155000000",
+                "bought": "1045114",
+                "sold": "173222726",
+                "depositTokenBalance": "3291231800",
+                "investTokenBalance": "10246616"
+            },
+            {
+                "timestamp": "1669400323",
+                "side": "BUY",
+                "feedPrice": "1649933000000",
+                "bought": "1014369",
+                "sold": "164561590",
+                "depositTokenBalance": "3126670210",
+                "investTokenBalance": "11260985"
+            },
+            {
+                "timestamp": "1669832332",
+                "side": "BUY",
+                "feedPrice": "1677502000000",
+                "bought": "1862518",
+                "sold": "314517089",
+                "depositTokenBalance": "5975824693",
+                "investTokenBalance": "24340998"
+            },
+            {
+                "timestamp": "1670264336",
+                "side": "BUY",
+                "feedPrice": "1710582000000",
+                "bought": "1748713",
+                "sold": "299380846",
+                "depositTokenBalance": "5688236084",
+                "investTokenBalance": "26137557"
+            },
+            {
+                "timestamp": "1670696341",
+                "side": "BUY",
+                "feedPrice": "1719041000000",
+                "bought": "1646813",
+                "sold": "284411804",
+                "depositTokenBalance": "5403824280",
+                "investTokenBalance": "27784370"
+            },
+            {
+                "timestamp": "1671128345",
+                "side": "BUY",
+                "feedPrice": "1740493229242",
+                "bought": "1540430",
+                "sold": "269659210",
+                "depositTokenBalance": "5123524997",
+                "investTokenBalance": "29270094"
+            },
+            {
+                "timestamp": "1671560349",
+                "side": "BUY",
+                "feedPrice": "1680846000000",
+                "bought": "1514560",
+                "sold": "256176249",
+                "depositTokenBalance": "4867348748",
+                "investTokenBalance": "30784654"
+            },
+            {
+                "timestamp": "1671992379",
+                "side": "BUY",
+                "feedPrice": "1678875000000",
+                "bought": "1441674",
+                "sold": "243367437",
+                "depositTokenBalance": "4623981311",
+                "investTokenBalance": "32226328"
+            },
+            {
+                "timestamp": "1672424384",
+                "side": "BUY",
+                "feedPrice": "1652615370000",
+                "bought": "1393190",
+                "sold": "231199065",
+                "depositTokenBalance": "4392782246",
+                "investTokenBalance": "33619518"
+            }
+        ]
+    },
+    {
+        "poolId": "pool05v3a",
+        "weight": 1,
+        "priceInfo": {
+            "symbol": "wbtc",
+            "price": {
+                "type": "BigNumber",
+                "hex": "0x01854726c000"
+            },
+            "timestamp": 1672657880
+        },
+        "swaps": [
+            {
+                "timestamp": "1666949934",
+                "side": "BUY",
+                "feedPrice": "2020077286554",
+                "bought": "8146623",
+                "sold": "1666666666",
+                "depositTokenBalance": "0",
+                "investTokenBalance": "8146623"
+            },
+            {
+                "timestamp": "1667560065",
+                "side": "BUY",
+                "feedPrice": "2061571000000",
+                "bought": "37134",
+                "sold": "7670000",
+                "depositTokenBalance": "0",
+                "investTokenBalance": "37134"
+            },
+            {
+                "timestamp": "1668105124",
+                "side": "SELL",
+                "feedPrice": "1722598000000",
+                "bought": "2567920837",
+                "sold": "15314658",
+                "depositTokenBalance": "2567920837",
+                "investTokenBalance": "0"
+            }
+        ]
+    }
+]
