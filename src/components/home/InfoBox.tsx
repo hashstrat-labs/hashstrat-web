@@ -11,7 +11,10 @@ interface InfoBoxProps {
 }
 
 
-const backgroundColors = ['#E3EDD6', '#E3DEEC', '#F4E5D0', '#F5EED4', '#C8D9DF']
+const imgBackgroundColors = ['#E0EDD6', '#E2D3EB', '#F4E5D0', '#F5EED4', '#C8D9DF']
+const imgBackgroundColorsDark = ['#DCE9D1', 'rgba(227, 222, 236, 0.32)', '#F4E5D0', 'rgba(248, 239, 212, 0.28)', '#C8D9DF']
+
+const backgroundColors = ['rgba(220, 233, 209, 0.26)', 'rgba(227, 222, 236, 0.32)', 'rgba(244, 229, 208, 0.24)', 'rgba(248, 239, 212, 0.28)', '#C8D9DF']
 const backgroundColorsDark = ['#3c4235', '#3b3a3d', '#49322e', '#3b3934', '#2b4853']
 
 export const InfoBox = ({ children, title, image, emoji,  paletteIndex, layout = "layout1" } : InfoBoxProps) => {
@@ -21,89 +24,110 @@ export const InfoBox = ({ children, title, image, emoji,  paletteIndex, layout =
         if (paletteIndex == undefined) return ''
         return theme.palette.type === 'light' ? backgroundColors[paletteIndex] : backgroundColorsDark[paletteIndex]
     }
+    const imgBackGroundColor = (paletteIndex: number | undefined, theme: any) : string => {
+        if (paletteIndex == undefined) return ''
+        return theme.palette.type === 'light' ? imgBackgroundColors[paletteIndex] : imgBackgroundColorsDark[paletteIndex]
+    }
+
 
 
     const layout1 = makeStyles( theme => ({
-        container: {
 
+        container: {
+            display: "grid",
+            gap: theme.spacing(1),
+            gridTemplateColumns: "3fr 2fr",
+
+            height: "100%",
             padding: theme.spacing(2),
-            margin: 10,
             alignItems: "center",
             borderRadius: 20,
             backgroundColor: backGroundColor(paletteIndex, theme),
-            border: paletteIndex !== undefined ?  "" : "1px solid #aaa",
-            
-            [theme.breakpoints.down('lg')]: {
-                display: "grid",
-                gap: theme.spacing(1),
-                gridTemplateColumns: "1fr 3fr",
-            },
+            border: "1px solid #E6E6E6",
 
             [theme.breakpoints.down('xs')]: {
                 gridTemplateColumns: "1fr",
                 gap: theme.spacing(1),
             },
         },
-        image: {
-            maxWidth: 120,
+
+        imageWrapper: {
             margin: "auto",
+            backgroundColor: imgBackGroundColor(paletteIndex, theme),
+            height: "100%",
+            borderRadius: 20,
+        },
+        image: {
+            maxWidth: "100%",
+            padding: 40,
+            filter: "saturate(60%)",
+
+            [theme.breakpoints.down('sm')]: {
+                maxWidth: 180,
+            },
             [theme.breakpoints.down('xs')]: {
                 margin: "auto",
+                display: 'none'
             },
         }
     }))
 
     const layout2 = makeStyles( theme => ({
         container: {
-
-            minHeight: 420,
+            display: "grid",
+            gap: theme.spacing(1),
             padding: theme.spacing(2),
-            margin: 10,
+            height: "100%",
+            backgroundColor: backGroundColor(paletteIndex, theme),
             alignItems: "center",
             borderRadius: 20,
-            backgroundColor: backGroundColor(paletteIndex, theme),
-            
-            [theme.breakpoints.down('lg')]: {
-                display: "grid",
-                gap: theme.spacing(1),
-                gridTemplateColumns: "1fr",
-            },
+            border: "1px solid #E6E6E6",
+        },
+
+        imageWrapper: {
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            backgroundColor: imgBackGroundColor(paletteIndex, theme),
+            height: "100%",
+            borderRadius: 20,
         },
         image: {
-            maxWidth: 120,
-            margin: "auto",
-            filter: theme.palette.type === 'light' ? "grayscale(0.6)" : "grayscale(0.6)",
-
+            maxWidth: 80,
+            maxHeight: "100%",
+            filter: "saturate(60%)",
             [theme.breakpoints.down('xs')]: {
                 margin: "auto",
+                display: 'none'
             },
-        }
+        },
     }))
 
 
   const layout3 = makeStyles( theme => ({
         container: {
-            minHeight: 360,
+            display: "grid",
+            gap: theme.spacing(1),
+            gridTemplateColumns: "1fr",
+
             padding: theme.spacing(2),
             margin: 10,
             alignItems: "center",
             borderRadius: 20,
             backgroundColor: backGroundColor(paletteIndex, theme),
             
-            [theme.breakpoints.down('lg')]: {
-                display: "grid",
-                gap: theme.spacing(1),
-                gridTemplateColumns: "1fr",
-            },
-
             [theme.breakpoints.down('xs')]: {
                 minHeight: 220,
             },
-     
+        },
+        imageWrapper: {
+            margin: "auto",
+            backgroundColor: imgBackGroundColor(paletteIndex, theme),
+            height: 200,
+            borderRadius: 20,
         },
         image: {
-            maxWidth: 300,
-            margin: "auto",
+            height: 200,
         }
     }))
 
@@ -112,22 +136,30 @@ export const InfoBox = ({ children, title, image, emoji,  paletteIndex, layout =
     return (
         <div className={classes.container}>
 
-            { image &&
-                <div style={{textAlign: "center", alignItems: "center", filter: layout === "layout2" && paletteIndex !== undefined ? "brightness(0.4)" : "" }}>
-                    <img src={image} className={classes.image} alt=""></img> 
-                </div>
+            { image && layout !== "layout1" &&
+                <Box className={classes.imageWrapper}>
+                    <div style={{margin: 'auto'}}>
+                        <img src={image} className={classes.image} alt="" />
+                    </div>
+                </Box>
             }
             <Box px={2} >
                 { emoji && 
-                    <Typography align="center" variant="h3"> <span style={{ fontSize: "180%" }}>  {emoji} </span>  </Typography>
+                    <Typography align="center" variant="h3"> <span style={{ fontSize: "180%" }}> {emoji} </span>  </Typography>
                 }
                 <Box py={1}>
-                    <Typography align={layout === "layout1" ? 'left' : 'center'} variant="h5"> {title} </Typography>
+                    <Typography variant="h5"> {title} </Typography>
                 </Box>
                 {children} 
             </Box>
+
+            { image && layout ===  "layout1" &&
+                <Box className={classes.imageWrapper}>
+                    <div style={{textAlign: "center", alignItems: "center"}}>
+                        <img src={image} className={classes.image} alt="" /> 
+                    </div>
+                </Box>
+            }
         </div>
     )
 }
-
-

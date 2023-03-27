@@ -13,31 +13,22 @@ const App = () => {
 	);
 
 
-	// const useDappConfig = {
-	// 	defaultNetwork: Polygon.chainId,
-	// 	// networks: [Goerli, Polygon],
-	// 	readOnlyChainId: Polygon.chainId,
-	// 	readOnlyUrls: {
-	// 		[Goerli.chainId]: getDefaultProvider('goerli'),
-	// 		[Polygon.chainId]: getDefaultProvider('matic'),
-	// 	},
-	// 	notifications: {
-	// 		expirationPeriod: 1000,
-	// 		checkInterval: 100,
-	// 	},
-	// 	// refresh: "everyBlock",
-	// };
-	  
-
 	const appTheme = createTheme({
 		palette: {
 			type: lightTheme ? "light" : "dark",
+			text: {
+				primary: lightTheme ? '#333' : '#ddd',
+			},
 			primary: {
-				main: lightTheme ? '#0091EA' : '#0091EA',
+				main: lightTheme ? '#097F3B' : '#BFED78',
 			},
 			secondary: {
-				main: lightTheme ? '#4e3073' :  '#ffaf49',
+				main: lightTheme ? '#EFE4CF' :  '#EFE4CF',
 			},
+			error: {
+				main: lightTheme ? '#AF1D1d' :  '#AF1D1d',
+			},
+
 			info: {
 				light: lightTheme ? '#4b5f6' : '#222222',
 				main: lightTheme ? '#2196f3' : '#2196f3',
@@ -56,20 +47,22 @@ const App = () => {
 
 	appTheme.typography.body1 = {
 		fontFamily: "Manrope",
-		// fontSize: '1.0rem',
+		fontSize: '1.0rem',
 	};
 
 	appTheme.typography.body2 = {
 		fontFamily: "Manrope",
-		// fontSize: '0.8rem',
+		fontSize: '0.8rem',
 	};
 
 	appTheme.typography.h1 = {
 		fontFamily: "Manrope",
+		fontSize: '3.2rem',
 	};
 	
 	appTheme.typography.h2 = {
 		fontFamily: "Manrope",
+		fontSize: '2.5rem',
 	};
 
 	appTheme.typography.h3 = {

@@ -19,7 +19,7 @@ export const FaqHome = () => {
         <div className={classes.container}>
 
             <Breadcrumbs aria-label="breadcrumb">
-                <Link component={RouterLink} to="/home"> Home </Link>
+                <Link component={RouterLink} to="/"> Home </Link>
                 <Typography>FAQ</Typography>
             </Breadcrumbs>
 
@@ -27,9 +27,9 @@ export const FaqHome = () => {
 
             <Box my={2}>
                 <Alert severity="warning">
-                    <AlertTitle> Scary Disclaimer </AlertTitle>
-                    Hashtrat is an experimental platform under active development.<br/>
-                    Be careful or you could loose your funds!
+                    <AlertTitle> Disclaimer </AlertTitle>
+                    HashStrat is beta software under active development.     HashStrat smart contracts haven't been audited. <br/>
+                    Use at your onw risk.
                 </Alert>
             </Box>
             

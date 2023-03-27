@@ -192,10 +192,12 @@ export const SimHome = () => {
 
                 <Box py={4}>
                     <Typography variant='h3' align="center">Strategy Simulator</Typography>
+
+                    <Typography variant='body2' align="center">Here you can simulate the performance of our portfolio management strategies for a given asset and time interval.</Typography>
                 </Box>
 
 
-                <Box px={2} >
+                <Box px={2} pt={2}>
                     <Box className={classes.header}>
                 
                     { strategy === 'MeanReversion' && 

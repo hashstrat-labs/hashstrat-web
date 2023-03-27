@@ -14,7 +14,7 @@ interface InfoPanelProps {
 
 const layout1 = makeStyles( theme => ({
     container: {
-
+        width: "calc(100% - 40px)",
         padding: theme.spacing(2),
         margin: 10,
         alignItems: "center",
@@ -24,19 +24,8 @@ const layout1 = makeStyles( theme => ({
          "linear-gradient(180deg, rgba(244,244,244,1) 0%, rgba(241,241,241,1) 66%, rgba(218,218,218,1) 100%)" :
          "linear-gradient(180deg, rgba(79,78,78,1) 0%, rgba(48,48,48,1) 64%, rgba(33,33,33,1) 100%)",
 
-        // [theme.breakpoints.down('xl')]: {
-        //     minWidth: 320,
-        // },
-
-        [theme.breakpoints.down('lg')]: {
-            minWidth: 530,
-        },
-
-        [theme.breakpoints.down('sm')]: {
-            minWidth: 330,
-        },
-
         [theme.breakpoints.down('xs')]: {
+            margin: 0,
             minWidth: "100%",
         },
     },

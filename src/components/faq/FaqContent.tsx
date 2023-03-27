@@ -11,7 +11,13 @@ const useStyles = makeStyles( theme => ({
     container: {
         padding: theme.spacing(2),
         fontSize: 18,
+
+        [theme.breakpoints.down('sm')]: {
+            padding: 0,
+            margin: 0,
+        },
     },
+
     title: {
         fontSize: 24, 
         fontWeight: 400,
@@ -20,7 +26,18 @@ const useStyles = makeStyles( theme => ({
             fontSize: 18,
             fontWeight: 500,
         },
-    }
+    }, 
+
+    accordion: {
+        backgroundColor: 'rgba(1,1,1,0)', 
+        borderBottom: `1px solid ${ theme.palette.type === 'light' ? 'rgba(0.6,0.6,0.6,0)': 'rgba(0.8,0.8,0.8,0)'} `, 
+        boxShadow: "0 0px 0px 0 rgba(0,0,0,0)",
+        margin: 0,
+        padding: 0
+
+    },
+
+
 }))
 
 
@@ -31,40 +48,41 @@ export const FaqContent = () => {
     return (
         <Box className={classes.container}>
 
-            <Accordion defaultExpanded>
-                <AccordionSummary expandIcon={<ExpandMore />} aria-controls="panel1bh-content" >
+            <Accordion defaultExpanded className={classes.accordion}>
+
+                <AccordionSummary expandIcon={<ExpandMore color="primary" />} aria-controls="panel1bh-content" >
                     <Typography className={classes.title} > What is HashStrat?  </Typography>
                 </AccordionSummary>
-                <AccordionDetails >
-                        <ul>
-                            <li>
-                                HashStrat is a new DeFi protocol to help you invest in digital assets with a long-term outlook.
-                            </li>
-                            <li>
-                                You select which assets you want to hold (e.g. BTC &amp; ETH), pick your favourite portfolio management strategy (e.g. Trend Following, Rebalancing, Mean Reversion, etc. ) and the protocol takes care of the rest. 
-                            </li>
-                            <li>
-                                Your portfolio management strategy determines your initial portfolio allocation and automates risk management.
-                            </li>
+                <AccordionDetails>
+                    <ul style={{  paddingLeft: 20, marginTop: 0 }} >
+                        <li>
+                            HashStrat is a new DeFi protocol that helps you to be a successful digital asset investor.
+                        </li>
+                        <li>
+                            You select which assets you want to hold (e.g. BTC &amp; ETH), pick your favourite portfolio management strategy (e.g. Trend Following, Rebalancing, Mean Reversion, etc. ) and the protocol takes care of the rest. 
+                        </li>
+                        <li>
+                            Your portfolio management strategies determine your initial portfolio allocation and automates risk management.
+                        </li>
 
-                            <li>
-                                Your strategies decide when to buy more of your favourite assets and when to sell into USDC to offload some risk.
-                            </li>
-                            <li>
-                                HashStrat is a trustless, self-custodial protocol, which means you stay in control of your assets at all times.
-                            </li>
-                        </ul>
+                        <li>
+                            Your strategies decide when to buy more of your favourite assets and when to sell into USDC to offload some risk.
+                        </li>
+                        <li>
+                            HashStrat is a trustless and self-custodial, which means you stay in control of your assets at all times.
+                        </li>
+                    </ul>
                 </AccordionDetails>
             </Accordion>
 
-            <Accordion>
-                <AccordionSummary expandIcon={<ExpandMore />} aria-controls="panel1bh-content" >
+            <Accordion className={classes.accordion}>
+                <AccordionSummary expandIcon={<ExpandMore color="primary" />} aria-controls="panel1bh-content" >
                     <Typography className={classes.title} > Why use HashStrat?</Typography>
                 </AccordionSummary>
-                <AccordionDetails >
+                <AccordionDetails  >
                     <Box>
                         HashStrat can help you to be a more successful, long-term investor:
-                        <ul>
+                        <ul style={{ paddingLeft: 20}} >
                             <li>Automated portfolio management prevents FOMO-buying and panic-selling your investments at the wrong time. </li>
                             <li>HashStrat strategies, with their built-in risk management, help to lock-in gains when price &amp; sentiment is high and scaling in your investments when price &amp; sentiment is low.</li>
                             <li>Our strategies can dramatically reduce volatility &amp; drawdowns of your portfolio and aim for returns competitive with a simple holding strategy.</li>
@@ -72,7 +90,7 @@ export const FaqContent = () => {
                         </ul>
 
                         Being an honest DeFi protocol, HashStrat offers the benefits of real DeFi:
-                        <ul>
+                        <ul style={{  paddingLeft: 20 }} >
                             <li>You stay in control of your funds at all times. </li>
                             <li>No minimum investment requirements and other arbitrary constraints, no barriers to entry or to exit.</li>
                             <li>Behaviour of trading strategies is deterministic and transparent.</li>
@@ -87,12 +105,12 @@ export const FaqContent = () => {
             </Accordion>
 
 
-            <Accordion>
-                <AccordionSummary expandIcon={<ExpandMore />} aria-controls="panel1bh-content" >
+            <Accordion className={classes.accordion}>
+                <AccordionSummary expandIcon={<ExpandMore color="primary" />} aria-controls="panel1bh-content" >
                     <Typography className={classes.title} > What are HashStrat Strategies exactly? </Typography>
                 </AccordionSummary>
                 <AccordionDetails >
-                        <ul>
+                        <ul style={{ paddingLeft: 20, marginTop: 0 }} >
                             <li> Strategies are set of rules, encoded into smart contracts, designed to manage the assets held in your digital asset portfolio.</li>
                             <li> Strategies decide when to allocate capital to risk assets (e.g. BTC, ETH) and when to trade back into a stable asset (USDC).</li>
                             <li> Their goal is to grow the value of your digital asset portfolio over time, while managing risk. </li>
@@ -102,12 +120,12 @@ export const FaqContent = () => {
             </Accordion>
 
 
-            <Accordion>
-                <AccordionSummary expandIcon={<ExpandMore />} aria-controls="panel1bh-content" >
+            <Accordion className={classes.accordion}>
+                <AccordionSummary expandIcon={<ExpandMore color="primary" />} aria-controls="panel1bh-content" >
                     <Typography className={classes.title} > Who is it for? </Typography>
                 </AccordionSummary>
                 <AccordionDetails >
-                        <ul>
+                        <ul style={{  paddingLeft: 20, marginTop: 0 }} >
                             <li> <strong>Individual investors</strong> who want to automate the management of their crypto-portfolios, improve returns and reduce volatility, whilst retaining control over their digital assets.</li>
                             <li> <strong>DAO treasury managers</strong> who want to protect the value of their stablecoin holdings from FIAT currency debasement by getting some exposure to pristine crypto assets in a 100% trustless and verifiable way.</li>
                             <li> <strong>DeFi protocols</strong> who want to safely invest some of their liquidity for the long term.</li>
@@ -116,15 +134,15 @@ export const FaqContent = () => {
             </Accordion>
 
 
-            <Accordion>
-                <AccordionSummary expandIcon={<ExpandMore />} aria-controls="panel1bh-content" >
+            <Accordion className={classes.accordion}>
+                <AccordionSummary expandIcon={<ExpandMore color="primary" />} aria-controls="panel1bh-content" >
                     <Typography className={classes.title} > How do you use HashStrat? </Typography>
                 </AccordionSummary>
                
                 <AccordionDetails >
                     <Box>
                         Using HashStat is as simple as:
-                        <ol>
+                        <ol >
                             <li>
                                 Select the assets you want to hold.
                             </li>
@@ -149,12 +167,12 @@ export const FaqContent = () => {
                 </AccordionDetails>
             </Accordion>
 
-            <Accordion>
-                <AccordionSummary expandIcon={<ExpandMore />} aria-controls="panel1bh-content" >
+            <Accordion className={classes.accordion}>
+                <AccordionSummary expandIcon={<ExpandMore color="primary" />} aria-controls="panel1bh-content" >
                     <Typography className={classes.title} > What is the HashStrat DAO?</Typography>
                 </AccordionSummary>
                 <AccordionDetails >
-                        <ul>
+                        <ul style={{ paddingLeft: 20, marginTop: 0 }} >
                             <li>The HashStrat protocol is governed by a Decentralized Autonomous Organization, the HashStrat DAO.</li>
                             <li>Users of the protocol can earn the DAO token <Link component={RouterLink} to="/dao">HST</Link> and become members of the DAO.</li>
                             <li> HST holders are able to participate in the protocol governance and revenue sharing programs.</li>
@@ -162,12 +180,12 @@ export const FaqContent = () => {
                 </AccordionDetails>
             </Accordion>
 
-            <Accordion>
-                <AccordionSummary expandIcon={<ExpandMore />} aria-controls="panel1bh-content" >
+            <Accordion className={classes.accordion}>
+                <AccordionSummary expandIcon={<ExpandMore color="primary" />} aria-controls="panel1bh-content" >
                     <Typography className={classes.title} > What's the DAO business model?</Typography>
                 </AccordionSummary>
                 <AccordionDetails >
-                        <ul>
+                        <ul style={{  paddingLeft: 20, marginTop: 0 }} >
                             <li> The protocol generates its revenues by taxing profits withdrawn from Pools &amp; Indexes. </li>
                             <li> The withdrawal fee is currently set to 1% of profits. </li>
                             <li> These fees are periodically collected into the DAO Treasury and re-distributed to DAO token holders as "dividends" </li>
@@ -175,15 +193,15 @@ export const FaqContent = () => {
                 </AccordionDetails>
             </Accordion>
 
-            <Accordion>
-                <AccordionSummary expandIcon={<ExpandMore />} aria-controls="panel1bh-content" >
+            <Accordion className={classes.accordion}>
+                <AccordionSummary expandIcon={<ExpandMore color="primary" />} aria-controls="panel1bh-content" >
                     <Typography className={classes.title} > This is cool but what are the risks?</Typography>
                 </AccordionSummary>
                 <AccordionDetails >
                     <Box>
                         Decentralized Finance is a nascent industry and it's important to be aware of its risks.<br/>
                         These are the main risks that is worth considering when using a DeFi protocol like HashStrat: 
-                        <ul>
+                        <ul style={{  paddingLeft: 20 }} >
                             <li>
                                 Protocol risks: <br/>
                                 Although great care is put into following programing best practices, 

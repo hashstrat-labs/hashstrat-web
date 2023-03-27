@@ -76,7 +76,7 @@ export const StrategiesHome = () => {
 
             <Box px={2}>
                 <Breadcrumbs aria-label="breadcrumb">
-                    <Link component={RouterLink} to="/home"> Home </Link>
+                    <Link component={RouterLink} to="/"> Home </Link>
                     <Typography>Strategies</Typography>
                 </Breadcrumbs>
             </Box>

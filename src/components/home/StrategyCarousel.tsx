@@ -1,6 +1,6 @@
 import Carousel from 'react-material-ui-carousel'
 
-import { makeStyles, Card, CardContent, CardActions, Box, Typography, Link } from  "@material-ui/core"
+import { makeStyles, useTheme, Card, CardContent, CardActions, Box, Typography, Link } from  "@material-ui/core"
 import { Horizontal } from '../Layout';
 
 import { StrategyPlayground } from "./StrategyPlayground"
@@ -22,7 +22,7 @@ type StrategyInfo = {
 
 const useStyle = makeStyles( theme => ({
     container: {
-        maxWidth: 1900,
+        maxWidth: 1300,
         margin: "auto",
         [theme.breakpoints.down('sm')]: {
             width: "100%",
@@ -81,6 +81,7 @@ const useStyle = makeStyles( theme => ({
 export const StrategyCarousel = () =>  { 
 
     const classes = useStyle()
+	const theme = useTheme();
 
     return (
         <Box className={classes.container}>
@@ -88,8 +89,7 @@ export const StrategyCarousel = () =>  {
                 fullHeightHover={false}  
                 navButtonsProps={{ 
                     style: {
-                        backgroundColor: 'dodgerblue',
-                        // borderRadius: 0
+                        backgroundColor: theme.palette.primary.main
                     }
                 }} 
 
@@ -149,16 +149,16 @@ export const StrategyItem = (props: {data: StrategyInfo}) =>  {
                         </Box>
                     </div>
                         
-                    <Box px={0}>
+                    {/* <Box px={0}>
                         <StrategyPlayground 
                             strategy={props.data.id as string} 
                             symbol="ETH"
                             from="2018-01-01"
                             to="2023-01-17"
-                            chartHeight={ Math.max( Math.round(window.screen.availWidth * .2), 350) }
+                            chartHeight={ Math.max( Math.round(window.screen.availHeight * .2), 250) }
                             chainId={137}
-                        /> 
-                    </Box>
+                        />
+                    </Box> */}
                     
                 </Box>
             </CardContent>

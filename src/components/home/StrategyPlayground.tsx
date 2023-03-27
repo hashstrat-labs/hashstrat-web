@@ -165,7 +165,6 @@ export const StrategyPlayground = ({ chainId, strategy, from, to, symbol, chartH
     }
 
     // chartHeight = 500
-    console.log(">>>> chartHeight", chartHeight)
 
     return (
         <Box>
