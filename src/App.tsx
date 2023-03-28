@@ -17,10 +17,11 @@ const App = () => {
 		palette: {
 			type: lightTheme ? "light" : "dark",
 			text: {
-				primary: lightTheme ? '#333' : '#ddd',
+				primary: lightTheme ? '#333' : '#fff',
+				secondary: lightTheme ? '#666' : '#ddd',
 			},
 			primary: {
-				main: lightTheme ? '#097F3B' : '#BFED78',
+				main: lightTheme ? '#097F3B' : '#B6EE82',
 			},
 			secondary: {
 				main: lightTheme ? '#EFE4CF' :  '#EFE4CF',
@@ -85,7 +86,7 @@ const App = () => {
 
 	appTheme.typography.h5 = {
 		fontFamily: "Manrope",
-		fontSize: '1.6em',
+		fontSize: '1.7em',
 		fontWeight: 600,
         [appTheme.breakpoints.down('sm')]: {
 			fontSize: '1.4rem',

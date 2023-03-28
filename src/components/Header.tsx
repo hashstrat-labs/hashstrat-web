@@ -52,9 +52,6 @@ const useStyles = makeStyles(theme => ({
 		gap: theme.spacing(2),
 	},
 	
-	logoFilter: {
-		// filter: "invert(20%)"
-	}
 }))
 
 
@@ -91,7 +88,7 @@ export const Header = ({ lightTheme, toggleTheme }: HeaderProps) => {
 			<Box className={classes.container}>
 
 				<Link component={RouterLink} to="/" >
-					<Button> <img src={logoImg} style={{ width: 155, height: 34 }} className={classes.logoFilter} alt="logo" /> </Button>
+					<Button> <img src={logoImg} style={{ width: 155, height: 34 }} alt="logo" /> </Button>
 				</Link>
 				
 				<div className={classes.rightItmesContainer}>

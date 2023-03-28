@@ -29,12 +29,14 @@ const useStyles = makeStyles( theme => ({
     },
     horizontalVerticallyCentered: {
         display: "flex",
+        alignItems:"center", 
+        alignContent:"center",
         justifyContent: "space-around",
         flexDirection: "row",
         flexFlow: "row wrap",
-        alignItems: "center",
         gap: theme.spacing(2)
     },
+
     horizontalVerticallyCenteredLeftAligned: {
         display: "flex",
         flexDirection: "row",

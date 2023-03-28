@@ -5,6 +5,8 @@ import { Typography, makeStyles, Divider, Link, Box } from "@material-ui/core"
 import { Link as LinkRouter } from "react-router-dom"
 import { InfoPanel } from "./InfoPanel"
 import { InfoBox } from "./InfoBox"
+import { ProductPreview } from "./ProductPreview"
+import { PortfolioStep } from "./PortfolioStep"
 import { HeadlineBox } from "./HeadlineBox"
 
 import { Horizontal } from "../Layout"
@@ -23,9 +25,13 @@ import decentralized from "./img/decentralized.png"
 
 
 import productPreview from "./img/product-preview.png"
-import portfolio01 from "./img/portfolio01.png"
-import portfolio02 from "./img/portfolio02.png"
-import portfolio03 from "./img/portfolio03.png"
+import portfolio01 from "./img/portfolio_01.png"
+import portfolio02 from "./img/portfolio_02.png"
+import portfolio03 from "./img/portfolio_03.png"
+
+import product01 from "./img/product_01.png"
+import product02 from "./img/product_02.png"
+import product03 from "./img/product_03.png"
 
 
 const useStyle = makeStyles(theme => ({
@@ -100,7 +106,7 @@ const useStyle = makeStyles(theme => ({
     subtitle: {
         fontFamily: "Manrope",
         fontSize: "1.5rem",
-        color: theme.palette.type === 'light' ? theme.palette.grey[700] : '#ffaf49',
+        color: theme.palette.text.primary,
         paddingBottom: 20,
 
         [theme.breakpoints.down('xl')]: {
@@ -138,7 +144,7 @@ const useStyle = makeStyles(theme => ({
 
     infoSection: {
 
-        paddingTop: 20,
+        paddingTop: 0,
         border: `10px solid #EBEBEB`,
         borderRadius: 20,
         boxShadow: "0 1px 27px 0 rgba(0,0,0,0.19)",
@@ -161,9 +167,15 @@ const useStyle = makeStyles(theme => ({
     },
 
     imageContainer: {
+        display: "grid",
+        gridTemplateColumns: "1fr",
+        alignItems: "center",
+        alignContent: "center",
+        justifyItems: "center",
         margin: "auto",
         paddingLeft: 40,
         paddingRight: 40,
+        height: "100%",
 
         filter: theme.palette.type === 'light' ? "brightness(1)" : "grayscale(0.3)"
     },
@@ -205,14 +217,15 @@ const useStyle = makeStyles(theme => ({
         paddingLeft: 5,
         paddingRight: 5,
         paddingBottom: 40,
-        backgroundColor: theme.palette.type === 'light' ? '#FAFAFA' : '#140F0C',
+        backgroundColor: theme.palette.type === 'light' ? '#FAFAFA' : '#111',
     },
 
     problemsItems: {
         maxWidth: 1100,
         display: "grid",
         gridTemplateColumns: "1fr 1fr",
-        gap: theme.spacing(0),
+        gridColumnGap: 0,
+        gridRowGap: 20,
         paddingTop: 20,
         margin: "auto",
         justifyItems: "center",
@@ -222,8 +235,6 @@ const useStyle = makeStyles(theme => ({
     },
 
     solutionSection: {
-        // backgroundImage: theme.palette.type === 'light' ? `url( ${background} )` : `url( ${backgroundDark} )` ,
-
         margin: "auto",
         paddingTop: 0,
         paddingLeft: 5,
@@ -231,48 +242,41 @@ const useStyle = makeStyles(theme => ({
         paddingBottom: 40,
     },
 
-    solutionItems: {
-        
+    
+    buildPortfolioSection: {
+        margin: "auto",
+        marginTop: 0,
+        paddingTop: 0,
+        paddingLeft: 5,
+        paddingRight: 5,
+        paddingBottom: 40,
+    },
+
+    buildPortfolioItems: {
         display: "grid",
         gridTemplateColumns: "1fr 1fr 1fr",
-        gap: theme.spacing(2),
+        gap: theme.spacing(1),
         margin: "auto",
         justifyItems: "center",
         [theme.breakpoints.down('sm')]: {
-            gridTemplateColumns: "1fr 1fr",
+            gridTemplateColumns: "1fr",
         },
         [theme.breakpoints.down('xs')]: {
             gridTemplateColumns: "1fr",
         },
-
-        color: theme.palette.type === 'light' ? theme.palette.grey[900] : theme.palette.grey[100],
     },
-
-    buildPortfolioSection: {
-        // backgroundImage: theme.palette.type === 'light' ? `url( ${background} )` : `url( ${backgroundDark} )` ,
-
-        margin: "auto",
-        paddingTop: 0,
-        paddingLeft: 5,
-        paddingRight: 5,
-        paddingBottom: 40,
-    },
-
 
     strategiesSection: {
-        // backgroundColor: theme.palette.type === 'light' ? '#FAFAFA' : '#140F0C',
-
+        maxWidth: 1024,
         margin: "auto",
+        marginTop: 30,
         paddingTop: 0,
         paddingLeft: 5,
         paddingRight: 5,
         paddingBottom: 40,
     },
 
-
     valueSection: {
-        // backgroundImage: theme.palette.type === 'light' ? `url( ${background} )` : `url( ${backgroundDark} )` ,
-
         margin: "auto",
         paddingTop: 30,
         paddingLeft: 20,
@@ -289,13 +293,12 @@ const useStyle = makeStyles(theme => ({
         display: "grid",
         gridTemplateColumns: "1fr 2fr",
         gap: theme.spacing(0),
-        // margin: "auto",
 
+        marginTop: 30,
         paddingTop: 30,
-        paddingLeft: 20,
-        paddingRight: 20,
+        paddingLeft: 40,
+        paddingRight: 40,
         paddingBottom: 20,
-        // color: theme.palette.type === 'light' ? theme.palette.grey[900] : theme.palette.grey[100],
 
         [theme.breakpoints.down('sm')]: {
             gridTemplateColumns: "1fr",
@@ -400,8 +403,8 @@ export const Home = () => {
                                 </div>
                             </div>
                             <div className={classes.actionButtons}>
-                                    <Link component={LinkRouter} to="https://app.hashstrat.com" style={{ textDecoration: 'none' }} >
-                                        <Button variant="contained" color="primary" >Launch App</Button>
+                                    <Link href="https://app.hashstrat.com" style={{ textDecoration: 'none' }} >
+                                        <Button variant="contained" color="primary" >Start Investing</Button>
                                     </Link>
                                     <Link href="./whitepaper.pdf" target="_blank" style={{ textDecoration: 'none' }} >
                                         <ButtonSecondary variant="outlined" color="primary"  >White paper</ButtonSecondary>
@@ -410,12 +413,12 @@ export const Home = () => {
                         </Box>
 
                         <Box className={classes.infoSection}>
-                            <Horizontal >
+                            
                                 <div className={classes.imageContainer}>
                                     <img className={classes.productImage} alt="Info graphics"/>
                                 </div>
 
-                                <Box className={classes.infoContainer}>
+                                {/* <Box className={classes.infoContainer}>
                                     <ol>
                                         <li>
                                             <Typography variant="body2" >Build your digital asset portfolio</Typography> 
@@ -430,9 +433,7 @@ export const Home = () => {
                                             <Typography variant="body2" >Collect protocol dividends</Typography> 
                                         </li>
                                     </ol>
-                                </Box>
-
-                            </Horizontal>
+                                </Box> */}
 
                         </Box>
                     </div>
@@ -443,16 +444,16 @@ export const Home = () => {
                 <Divider style={{ marginTop: 0, marginBottom: 40 }} />
 
                 <Box>
-                    <Typography variant="body2" align="center" color="error" style={{textTransform: "uppercase", fontWeight: 600 }}>Current Landscape</Typography>
+                    <Typography variant="body2" align="center" color="error" style={{textTransform: "uppercase", fontWeight: 600 }}>The Problem</Typography>
                 </Box>
 
                 <Box pb={2}>
-                    <Typography variant="h3" align="center">CeFi & DeFi aren't working <br/> for long-term investors</Typography>
+                    <Typography variant="h3" align="center"> Too many people loose money in crypto.</Typography>
                 </Box>
 
-                <Box pb={2}>
+                <Box pb={4}>
                     <Typography variant="body1" align="center">
-                        Trust issues and low returns don't justify the risks
+                        CeFi, DeFi, DIY investing are full of pitfalls for new and seasoned investors.
                     </Typography>
                 </Box>
 
@@ -512,26 +513,6 @@ export const Home = () => {
                 </Box>
 
                 <Box className={classes.problemsItems} >
-{/* 
-                    <InfoPanel 
-                        subject="Do-it-your-self Investing"
-                        title="“Not your keys, not your coins”" 
-                        image={centralized} 
-                        layout="layout1"
-                        url="https://medium.com/@hashstrat/why-hashstrat-bb850155e5cb"
-                    >
-                        <Box mt={3}>
-                            <Typography align="left" variant="body2" >Incompetence and mismanagement, including:</Typography>
-                        </Box>
-                        <ul>
-                            <li>Rehypothecation of investors' funds.</li>
-                            <li>Appalling risk management.</li>
-                            <li>Lack of integrity and fraud.</li>
-                        </ul>
-             
-                    </InfoPanel> */}
-
-
                     <InfoPanel 
                         subject="Centralized Finance"
                         title="“Not your keys, not your coins”" 
@@ -581,52 +562,65 @@ export const Home = () => {
             <section className={classes.solutionSection}>
                 <Divider style={{ marginTop: 0, marginBottom: 40 }} />
 
-                <Box pb={2}>
+                <Box pb={3}>
                     <Typography variant="body2" color="primary" align="center" style={{textTransform: "uppercase", fontWeight: 600 }}>
-                       What we offer
+                       Let's fix it
                     </Typography>
                     <Typography variant="h3" align="center">
-                        Your crypto portfolio, automated
+                        HashStrat, your crypto portfolio, automated.
                     </Typography>
                     <Box mt={1}>
                     <Typography variant="body1" align="center">
-                        HashStrat, the first 100% trustless protocol that simplifies the management of your crypto portfolio. 
+                        The first DeFi protocol that simplifies the management of your crypto investments. 
                     </Typography>
                     </Box>
                 </Box>
 
 
-                <Box className={classes.solutionItems} >
-                    <InfoBox emoji="❤️" title="Hold only the best assets" layout="layout2" paletteIndex={0}>
-                        <ul>
-                            <li>Your APY comes from the appreciation of the best assets over the crypto market cycles.</li>
-                            <li>No need to over-diversify. BTC and ETH are the 'index' over the whole crypto and web3 markets.</li>
-                            <li>Stay in control. Always.</li>
-                        </ul>
-                    </InfoBox>
+                <Box>
+                    <ProductPreview emoji="❤️" title="Hold only the best assets" layout="layout1" image={product01}>
+                        <Box pb={2}>
+                            <span style={{fontSize: '130%'}}>Your gains should come from the appreciation of the best crypto assets over the long term. Not yield farming, lending or shitcoin trading. </span>
+                        </Box>
+                        <Box py={2}>
+                            <span style={{fontSize: '130%'}}>No need to over-diversify. BTC and ETH are the “index” over the whole crypto and web3 markets.</span>
+                        </Box>
+                        <Box py={2}>
+                            <span style={{fontSize: '130%'}}>Stay in control. Always.</span>
+                        </Box>
+                    </ProductPreview>
 
-                    <InfoBox emoji="🤖" title="Automate your portfolio management"  layout="layout2" paletteIndex={1}>
-                        <ul>
-                            <li>Build a balanced portfolio of your favourite assets.</li>
-                            <li>Automate your buys and sells to ensure appropriate exposure and risk management.</li>
-                            <li>Don't be the guy buying the top and selling the bottom. </li>
-                        </ul>
-                    </InfoBox>
+                    <ProductPreview emoji="🤖" title="Automate your portfolio management"  layout="layout2" image={product02}>
+                        <Box pb={2}>
+                            <span style={{fontSize: '130%'}}>Build a balanced portfolio with your favourite assets.</span>
+                        </Box>
+                        <Box py={2}>
+                            <span style={{fontSize: '130%'}}>Automate your buys and sells to ensure appropriate exposure and risk management oevr the market cycles.</span>
+                        </Box>
+                        <Box py={2}>
+                            <span style={{fontSize: '130%'}}>Don't be the guy buying the top and selling the bottom.</span>
+                        </Box>
+                    </ProductPreview>
 
-                    <InfoBox emoji="😌" title="Find peace of mind" layout="layout2" paletteIndex={2}>
-                        <ul>
-                            <li>Avoid the stress of the extreme sentiment and volatility in the crypto markets. </li>
-                            <li>Let your portfolio management strategies do the hard work.</li>
-                            <li>Stay humble. Stay safe.</li>
-                        </ul>
-                    </InfoBox>
+                    <ProductPreview emoji="😌" title="Find peace of mind" layout="layout1" image={product03}>
+
+                        <Box pb={2}>
+                            <span style={{fontSize: '130%'}}>Avoid the stress of the extreme sentiment and volatility in the crypto markets.</span>
+                        </Box>
+                        <Box py={2}>
+                            <span style={{fontSize: '130%'}}>Let your portfolio management strategies, and the blockchain, do the hard work.</span>
+                        </Box>
+                        <Box py={2}>
+                            <span style={{fontSize: '130%'}}>Stay humble. Stay safe.</span>
+                        </Box>
+
+                    </ProductPreview>
                 </Box>
 
             </section>
 
 
             <section className={classes.buildPortfolioSection}>
-                <Divider style={{ marginTop: 0, marginBottom: 40 }} />
 
                 <Box pb={2}>
                     <Typography variant="body2" color="primary" align="center" style={{textTransform: "uppercase", fontWeight: 600 }}>
@@ -635,29 +629,23 @@ export const Home = () => {
                     <Typography variant="h3" align="center">Build your portfolio in 3 easy steps</Typography>
                 </Box>
 
-                <Box pb={2}>
+                <Box pb={4}>
                     <Typography variant="body1" align="center">
-                        Choose your favourite assets and portfolio management strategies. Deposit. HashStrat will take care of the rest.
+                        Choose your favourite assets and portfolio management strategies. <br/>
+                        Deposit. HashStrat will take care of the rest.
                     </Typography>
                   
                 </Box>
 
-                <Box className={classes.solutionItems} >
-                    <InfoBox title="Choose your favourite assets" layout="layout3" image={portfolio01} paletteIndex={2}>
-                    </InfoBox>
-
-                    <InfoBox title="Pick your portfolio management strategies" layout="layout3" image={portfolio02} paletteIndex={0}>
-                    </InfoBox>
-
-                    <InfoBox title="Deposit and access your portfolio" layout="layout3" image={portfolio03} paletteIndex={1}>
-                    </InfoBox>
+                <Box className={classes.buildPortfolioItems} >
+                    <PortfolioStep step={1} title="Choose your favourite assets" image={portfolio01} />
+                    <PortfolioStep step={2} title="Pick your portfolio management strategies" image={portfolio02} />
+                    <PortfolioStep step={3} title="Deposit and access your portfolio" image={portfolio03} />
                 </Box>
             </section>
 
 
             <section className={classes.strategiesSection}>
-                <Divider style={{ marginTop: 0, marginBottom: 40 }} />
-
                 <Box pb={2}>
                     <Typography variant="body2" color="primary" align="center" style={{textTransform: "uppercase", fontWeight: 600 }}>
                        How we do it
@@ -672,6 +660,7 @@ export const Home = () => {
                 </Box>
 
                 <StrategyCarousel />
+
             </section>
 
             <section className={classes.valueSection}>
@@ -685,7 +674,7 @@ export const Home = () => {
 
                 <Box pb={2}>
                     <Typography variant="body1" align="center">
-                        A protocol that is truly open, trustless and transparent. <br/>
+                        A protocol that is truly secure, open, trustless and transparent.<br/>
                         The way DeFi is meant to be.
                     </Typography>
                 </Box>
@@ -731,10 +720,7 @@ export const Home = () => {
 
                 </Box>
 
-                <Divider style={{ marginTop: 40, marginBottom: 0 }} />
-
             </section>
-
 
      
             <section className={classes.faqSection}  > 

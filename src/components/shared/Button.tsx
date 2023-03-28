@@ -16,7 +16,7 @@ export const Button = styled(BaseButton)(({ theme }) => (
 
     '&:hover': {
         filter: "brightness(0.8)",
-        backgroundColor: theme.palette.type === 'light' ? '#A9EE70': '#A9EE70',
+        backgroundColor: theme.palette.type === 'light' ? '#A9EE70': '#A9EE70', // C2ECBF   '#A9EE70': '#A9EE70'
         boxShadow: "0 0px 0px 0 rgba(0,0,0,0)",
         border: `0px solid ${theme.palette.text.primary}`,
     },

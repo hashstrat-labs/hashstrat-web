@@ -79,16 +79,7 @@ const useStyle = makeStyles( theme => ({
 		},
     },
     chart: {
-        minWidth: 1000,
-        [theme.breakpoints.down('lg')]: {
-            minWidth: 700,
-		},
-        [theme.breakpoints.down('sm')]: {
-            minWidth: 600,
-		},
-        [theme.breakpoints.down('xs')]: {
-            minWidth: 400,
-		},
+        minWidth: 500,
     },
 
 }))
@@ -164,12 +155,11 @@ export const StrategyPlayground = ({ chainId, strategy, from, to, symbol, chartH
         setSelectedTokenIndex(parseInt(newValue))
     }
 
-    // chartHeight = 500
 
     return (
         <Box>
             <Box py={1}>
-             <Typography  variant='h6'>Strategy performance </Typography>
+             <Typography variant='h6'>Performance</Typography>
             </Box>
 
             <Paper variant='outlined'>

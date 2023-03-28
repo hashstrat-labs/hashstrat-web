@@ -74,7 +74,13 @@ const useStyle = makeStyles( theme => ({
         [theme.breakpoints.down('sm')]: {
             display: "none"
         },
-    }
+    },
+
+    playground: {
+        [theme.breakpoints.down('xs')]: {
+           display: 'none'
+       },
+   },
 
 }))
 
@@ -149,16 +155,16 @@ export const StrategyItem = (props: {data: StrategyInfo}) =>  {
                         </Box>
                     </div>
                         
-                    {/* <Box px={0}>
+                    <Box className={classes.playground}>
                         <StrategyPlayground 
                             strategy={props.data.id as string} 
                             symbol="ETH"
                             from="2018-01-01"
                             to="2023-01-17"
-                            chartHeight={ Math.max( Math.round(window.screen.availHeight * .2), 250) }
+                            chartHeight={ 250 }
                             chainId={137}
                         />
-                    </Box> */}
+                    </Box>
                     
                 </Box>
             </CardContent>
