@@ -27,12 +27,15 @@ interface MainProps {
 const useStyle = makeStyles( theme => ({
     container: {
         transform: "scale(1.0)",
-        margin: "auto",
-        maxWidth: 1556,
+
         backgroundColor: theme.palette.type === 'light' ? '#FAFAFA' : '#140F0C',
 
         backgroundImage: theme.palette.type === 'light' ? `url( ${background} )` : `url( ${backgroundDark} )` ,
         backgroundRepeat: "repeat",
+    },
+    contentWrapper: {
+        margin: "auto",
+        maxWidth: 1556,
     }
 
 }))
@@ -44,6 +47,7 @@ export const Main = ( { lightTheme, toggleTheme } : MainProps  ) =>  {
 
     return (
         <Box className={classes.container} >
+            <Box className={classes.contentWrapper} >
 
             <BrowserRouter>
                 <ScrollToTop />
@@ -80,6 +84,7 @@ export const Main = ( { lightTheme, toggleTheme } : MainProps  ) =>  {
                 <Footer />
             </BrowserRouter>
 
+            </Box>
         </Box>
 
     )

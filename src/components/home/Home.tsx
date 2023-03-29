@@ -24,7 +24,7 @@ import centralized from "./img/centralized.png"
 import decentralized from "./img/decentralized.png"
 
 
-import productPreview from "./img/product-preview.png"
+import productPreview from "./img/product-preview.jpg"
 import portfolio01 from "./img/portfolio_01.png"
 import portfolio02 from "./img/portfolio_02.png"
 import portfolio03 from "./img/portfolio_03.png"
@@ -80,6 +80,11 @@ const useStyle = makeStyles(theme => ({
         fontWeight: 800,
         color:  theme.palette.type === 'light' ? theme.palette.grey[800] : theme.palette.text.primary,
         
+
+        background: "-webkit-linear-gradient(45deg, #23658E, #AE3FAE 80%)",
+        '-webkit-background-clip': "text",
+        '-webkit-text-fill-color': "transparent",
+
         [theme.breakpoints.down('xl')]: {
             fontSize: "4.8rem",
             maxWidth: 1300,
@@ -97,7 +102,7 @@ const useStyle = makeStyles(theme => ({
         },
 
         [theme.breakpoints.down('xs')]: {
-            fontSize: "2.9rem",
+            fontSize: "2.7rem",
             textAlign: 'center',
             marginRight: 0
         },
@@ -119,7 +124,7 @@ const useStyle = makeStyles(theme => ({
         },
         [theme.breakpoints.down('xs')]: {
             paddingBottom: 0,
-            fontSize: "1.3rem",
+            fontSize: "1.2rem",
             textAlign: 'left'
         },
     },
@@ -145,51 +150,49 @@ const useStyle = makeStyles(theme => ({
     infoSection: {
 
         paddingTop: 0,
+        marginLeft: 50,
         border: `10px solid #EBEBEB`,
         borderRadius: 20,
         boxShadow: "0 1px 27px 0 rgba(0,0,0,0.19)",
-
-        backgroundColor: theme.palette.type === 'light' ? '#D7E9CB' : theme.palette.grey[900],
         paddingBottom: 0,
+        maxWidth: 600,
+        maxHeight: 700,
 
-        [theme.breakpoints.down('xl')]: {
-            maxWidth: 600,
-        },
         [theme.breakpoints.down('lg')]: {
-            maxWidth: 480,
+            // maxWidth: 550,
+            maxHeight: 470
         },
         [theme.breakpoints.down('md')]: {
-            maxWidth: 400,
+            maxHeight: 420,
         },
+
         [theme.breakpoints.down('sm')]: {
-            display: "none",
+            marginLeft: 0,
+        },
+        [theme.breakpoints.down('xs')]: {
+            marginLeft: 0,
+            maxWidth: 300,
         },
     },
 
     imageContainer: {
-        display: "grid",
-        gridTemplateColumns: "1fr",
-        alignItems: "center",
-        alignContent: "center",
-        justifyItems: "center",
-        margin: "auto",
-        paddingLeft: 40,
-        paddingRight: 40,
-        height: "100%",
+        overflow: "hidden",
+        filter: theme.palette.type === 'light' ? "brightness(1)" : "grayscale(0.3)",
+        borderRadius: 20,
 
-        filter: theme.palette.type === 'light' ? "brightness(1)" : "grayscale(0.3)"
     },
 
     productImage: {
         content: `url( ${productPreview} )`,
-        [theme.breakpoints.down('xl')]: {
-            maxWidth: 480,
-        },
+        // objectFit: 'fill',
+        maxHeight: 680,
+       
         [theme.breakpoints.down('lg')]: {
-            maxWidth: 350,
+            // maxWidth: 550,
+            maxHeight: 450
         },
         [theme.breakpoints.down('md')]: {
-            maxWidth: 300,
+            maxHeight: 400
         },
     },
 
@@ -259,7 +262,7 @@ const useStyle = makeStyles(theme => ({
         margin: "auto",
         justifyItems: "center",
         [theme.breakpoints.down('sm')]: {
-            gridTemplateColumns: "1fr",
+            gridTemplateColumns: "1fr 1fr",
         },
         [theme.breakpoints.down('xs')]: {
             gridTemplateColumns: "1fr",
@@ -274,6 +277,8 @@ const useStyle = makeStyles(theme => ({
         paddingLeft: 5,
         paddingRight: 5,
         paddingBottom: 40,
+        borderRadius: 20,
+        // backgroundColor: 'red'
     },
 
     valueSection: {
@@ -396,9 +401,9 @@ export const Home = () => {
                                         <li style={{ paddingBottom: 10 }}>
                                             Proven <strong>on-chain strategies</strong> help you manage exposure and risk in your portfolio.
                                         </li>
-                                        <li>
+                                        {/* <li>
                                             <strong>Stay in control</strong> of your assets and watch your portfolio grow.
-                                        </li>
+                                        </li> */}
                                     </ul>
                                 </div>
                             </div>
@@ -521,7 +526,7 @@ export const Home = () => {
                         url="https://medium.com/@hashstrat/why-hashstrat-bb850155e5cb"
                     >
                         <Box mt={3}>
-                            <Typography align="left" variant="body2" >Incompetence and mismanagement, including:</Typography>
+                            <Typography align="left" variant="body1" >Incompetence and mismanagement, including:</Typography>
                         </Box>
                         <ul>
                             <li>Rehypothecation of investors' funds.</li>
@@ -540,9 +545,9 @@ export const Home = () => {
                     >
 
                         <Box mt={3}>
-                            <Typography align="left" variant="body2" >A choice between low APY and rug pulls    :</Typography>
+                            <Typography align="left" variant="body1" >A choice between low APY and rug pulls    :</Typography>
                         </Box>
-                        <ul style={{maxWidth: 470}}>
+                        <ul style={{maxWidth: 470, marginBottom: 30}}>
                             <li>Legit protocols can only offer low APY, not worth the risks.</li>
                             <li>Scams entice you with impossible gains, but
                             “when you don't know where the API comes from, you are the APY”.

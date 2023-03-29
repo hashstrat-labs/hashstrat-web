@@ -23,8 +23,7 @@ export const PortfolioStep = ({ step, title, image } : PortfolioStepProps ) => {
             backgroundColor: theme.palette.type === 'light' ? '#E0E0E0' : '#E0E0E0',
             
             [theme.breakpoints.down('xs')]: {
-                // minHeight: 220,
-                marginBottom: 10,
+                margin: 10,
             },
         },
         imageWrapper: {
@@ -34,9 +33,9 @@ export const PortfolioStep = ({ step, title, image } : PortfolioStepProps ) => {
         image: {
             borderRadius: "20px 20px 0px 0px",
             maxWidth: "100%",
+            filter: theme.palette.type === 'light' ? "saturate(60%)" : "saturate(60%) brightness(0.8)",
         },
         stepWrapper: {
-            // backgroundColor: theme.palette.type === 'light' ? '#FAFAFA' : '#FAFAFA',
             margin: 15,
             display: "grid", 
             gap: 20, 
@@ -47,7 +46,7 @@ export const PortfolioStep = ({ step, title, image } : PortfolioStepProps ) => {
             gridTemplateColumns: "66px auto"
         },
         step: {
-            display: 'grid',
+             display: 'grid',
              textAlign: 'center', 
              alignItems: 'center', 
              width: 66, 
@@ -71,9 +70,9 @@ export const PortfolioStep = ({ step, title, image } : PortfolioStepProps ) => {
         <div className={classes.container}>
 
             <Box className={classes.imageWrapper}>
-                <div style={{margin: 'auto'}}>
+                {/* <div style={{margin: 'auto'}}> */}
                     <img src={image} className={classes.image} alt="" />
-                </div>
+                {/* </div> */}
             </Box>
 
             <Box style={{backgroundColor: '#FAFAFA', borderRadius: "0px 0px 20px 20px"}} >

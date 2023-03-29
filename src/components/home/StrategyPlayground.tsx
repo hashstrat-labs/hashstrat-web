@@ -162,7 +162,7 @@ export const StrategyPlayground = ({ chainId, strategy, from, to, symbol, chartH
              <Typography variant='h6'>Performance</Typography>
             </Box>
 
-            <Paper variant='outlined'>
+            <Box>
                 <Box className={classes.container} >
                     <TabContext value={selectedTokenIndex.toString()}>
                         <TabList onChange={handleChange} >
@@ -301,7 +301,7 @@ export const StrategyPlayground = ({ chainId, strategy, from, to, symbol, chartH
 
 
                 </Box>
-            </Paper>
+            </Box>
 
         </Box>
     )

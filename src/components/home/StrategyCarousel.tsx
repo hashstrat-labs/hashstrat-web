@@ -7,7 +7,7 @@ import { StrategyPlayground } from "./StrategyPlayground"
 import { Link as RouterLink } from "react-router-dom"
 
 import { Launch } from "@material-ui/icons"
-
+import { InfoCard } from '../simulator/InfoCard'
 
 type StrategyInfo = {
     id: string,
@@ -35,6 +35,9 @@ const useStyle = makeStyles( theme => ({
         paddingRight: 10,
     },
     cardContent: {
+        // backgroundColor: 'orange',
+        borderRadius: 20,
+        border: "1px solid #ddd",
        [theme.breakpoints.down('sm')]: {
             paddingLeft: 0,
             paddingRight: 0,
@@ -71,6 +74,8 @@ const useStyle = makeStyles( theme => ({
         border: "1px solid #aaa",
         alignItems: "center",
         borderRadius: 12,
+        backgroundColor: theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[800],
+
         [theme.breakpoints.down('sm')]: {
             display: "none"
         },
@@ -120,7 +125,7 @@ export const StrategyItem = (props: {data: StrategyInfo}) =>  {
     const classes = useStyle()
 
     return (
-        <Card variant="outlined" >
+        <Box  >
             <CardContent  className={classes.cardContent}>
                 <Box px={0}>
                     <div className={classes.item}>
@@ -145,7 +150,7 @@ export const StrategyItem = (props: {data: StrategyInfo}) =>  {
                             </Horizontal>
                         </Box>
 
-
+                   
                         <Box className={classes.roi}>
                             <Typography variant="body1" align="center"><strong>Returns</strong></Typography>
                             <Box py={1}>
@@ -170,7 +175,7 @@ export const StrategyItem = (props: {data: StrategyInfo}) =>  {
             </CardContent>
             <CardActions >
             </CardActions>
-        </Card>
+        </Box>
     )
 }
 

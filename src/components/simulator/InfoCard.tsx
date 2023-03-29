@@ -4,14 +4,15 @@ import { utils } from "ethers"
 
 interface InfoCardProps {
     title: string,
-    value?: number,
+    value?: any,
     detailTitle?: string,
-    detailValue?: number
-    type : "amount" | "percentage"
+    detailValue?: number | string
+    type : "amount" | "percentage" | "text"
 }
 
 
 export const InfoCard = ({type, title, value, detailTitle, detailValue }: InfoCardProps) => {
+    console.log("detailTitle", detailTitle, "detailValue", detailValue)
 
     return (
         <Card style={{ maxWidth: 220, borderRadius: 12, borderColor: "#aaa" }} variant="outlined" >
@@ -23,16 +24,16 @@ export const InfoCard = ({type, title, value, detailTitle, detailValue }: InfoCa
                     { value &&
                         <>
                             <Typography variant="h5" style={{ marginBottom: 20 }} color='primary'>
-                            { type === 'amount' ? '$' : '' }{ utils.commify( value ) }{ type === 'percentage' ? '%' : '' }
+                            { type === 'amount' ? '$' : '' }{ type === 'text' ? value  : type === 'amount' || type === 'percentage' ? utils.commify( value ) : '' }{ type === 'percentage' ? '%' : '' }
                             </Typography>
                         </>
                     }
                 </div>
-                { detailTitle && detailValue &&
+                {  detailValue &&
                     <Typography variant="body2" style={{ paddingBottom: 0, paddingTop:0 }} align="center" >
-                        {detailTitle}: { type === 'amount' ? '$' : '' }{ utils.commify( detailValue ) }{ type === 'percentage' ? '%' : '' }
+                        {detailTitle}: { type === 'amount' ? '$' : '' }{ type === 'text' ? detailValue : type === 'amount' || type === 'percentage' ? utils.commify( detailValue ) : '' }{ type === 'percentage' ? '%' : '' }
                     </Typography>
-                }
+                } 
             </CardContent>
         </Card>
     )

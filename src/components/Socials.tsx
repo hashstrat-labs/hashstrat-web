@@ -38,7 +38,7 @@ const useStyle = makeStyles( theme => ({
     },
 
     icon: {
-        // bgcolor: theme.palette.type === 'light' ? 'black' : 'white'
+        filter: theme.palette.type === 'light' ? "brightness(1.0)" : "invert(1.0)",
         width: 15,
         [theme.breakpoints.down('sm')]: {
             display: 'none'
@@ -56,7 +56,7 @@ export const Socials = () => {
         <Box className={classes.container}>
 
             <Horizontal align="left" valign="center">
-                
+
                 <Link target="_blank" href="https://medium.com/@hashstrat" style={{ textDecoration: 'none' }} >
                     <Box className={classes.social}>
                         <Horizontal valign="center">

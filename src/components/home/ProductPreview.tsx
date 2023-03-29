@@ -63,7 +63,8 @@ export const ProductPreview = ({ children, title, image, emoji, layout = "layout
         image: {
             maxWidth: "100%",
             padding: 40,
-            filter: "saturate(60%)",
+            filter: theme.palette.type === 'light' ? "saturate(40%)" : "saturate(40%) brightness(0.8)",
+
             [theme.breakpoints.down('sm')]: {
                 // maxWidth: 180,
             },
@@ -122,13 +123,13 @@ export const ProductPreview = ({ children, title, image, emoji, layout = "layout
             alignItems: "center",
             margin: "auto",
             // height: "100%",
-            maxWidth: 720,
+            // maxWidth: 720,
             borderRadius: 20,
         },
         image: {
             maxWidth: "100%",
             padding: 40,
-            filter: "saturate(60%)",
+            filter: theme.palette.type === 'light' ? "saturate(40%)" : "saturate(40%) brightness(0.8)",
 
             [theme.breakpoints.down('sm')]: {
                 // maxWidth: 180,

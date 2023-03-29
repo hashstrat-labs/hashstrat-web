@@ -17,8 +17,6 @@ const useStyle = makeStyles( theme => ({
 }))
 
 
-
-
 export const Footer = () =>  {
     const classes = useStyle()
 	const theme = useTheme();

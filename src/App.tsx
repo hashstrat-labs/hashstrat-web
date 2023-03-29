@@ -59,6 +59,9 @@ const App = () => {
 	appTheme.typography.h1 = {
 		fontFamily: "Manrope",
 		fontSize: '3.2rem',
+		[appTheme.breakpoints.down('xs')]: {
+			fontSize: '3.0rem',
+        },
 	};
 	
 	appTheme.typography.h2 = {

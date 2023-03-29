@@ -94,7 +94,7 @@ export const InfoPanel = ({ subject, children, title, image, url, layout = "layo
                     </Box>
 
                     { url && 
-                        <Box mt={2}>
+                        <Box>
                             <Link href={`${url}`} target="_blank" style={{ textDecoration: 'none' }} >
                                 <ButtonSecondary variant="outlined" color="primary" >Learn more</ButtonSecondary>
                             </Link>
