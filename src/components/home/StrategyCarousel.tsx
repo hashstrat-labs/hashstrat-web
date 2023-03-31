@@ -100,7 +100,7 @@ export const StrategyCarousel = () =>  {
                 fullHeightHover={false}  
                 navButtonsProps={{ 
                     style: {
-                        backgroundColor: theme.palette.primary.main
+                        backgroundColor: '#93C78F' //theme.palette.primary.main
                     }
                 }} 
 

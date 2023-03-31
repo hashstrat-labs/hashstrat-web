@@ -32,6 +32,7 @@ const useStyle = makeStyles( theme => ({
 
         backgroundImage: theme.palette.type === 'light' ? `url( ${background} )` : `url( ${backgroundDark} )` ,
         backgroundRepeat: "repeat",
+
     },
     contentWrapper: {
         margin: "auto",

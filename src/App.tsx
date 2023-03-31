@@ -29,7 +29,6 @@ const App = () => {
 			error: {
 				main: lightTheme ? '#AF1D1d' :  '#AF1D1d',
 			},
-
 			info: {
 				light: lightTheme ? '#4b5f6' : '#222222',
 				main: lightTheme ? '#2196f3' : '#2196f3',

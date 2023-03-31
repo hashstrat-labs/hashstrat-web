@@ -133,16 +133,17 @@ const useStyle = makeStyles(theme => ({
         display: 'flex',
         flexDirection: 'row',
         flexFlow: "row wrap",
-        alignItems: "center",
-        justifyContent: "center",
         gap: theme.spacing(2),
       
-        paddingTop: 20, 
+        paddingTop: 40, 
         marginBottom: 30,
         maxWidth: 500,
 
         [theme.breakpoints.down('sm')]: {
-            marginTop: 40,
+            marginTop: 0,
+            marginBottom: 40,
+            margin: "auto",
+            justifyContent: "center",
         },
     },
 
@@ -391,7 +392,7 @@ export const Home = () => {
                         <Box>
                             <div>
                                 <div className={classes.title}>
-                                    Simplify your digital asset investments
+                                    Simplify your DeFi investments
                                 </div>
                                 <div className={classes.subtitle}>
                                     <ul>
@@ -399,11 +400,11 @@ export const Home = () => {
                                            The first <strong>DeFi</strong> protocol that <strong>automates</strong> the management of your <strong>digital assets</strong>. 
                                         </li>
                                         <li style={{ paddingBottom: 10 }}>
-                                            Proven <strong>on-chain strategies</strong> help you manage exposure and risk in your portfolio.
+                                            Proven <strong>on-chain strategies</strong> help you <strong>manage exposure and risk</strong> in your portfolio.
                                         </li>
-                                        {/* <li>
+                                        <li>
                                             <strong>Stay in control</strong> of your assets and watch your portfolio grow.
-                                        </li> */}
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -418,28 +419,9 @@ export const Home = () => {
                         </Box>
 
                         <Box className={classes.infoSection}>
-                            
-                                <div className={classes.imageContainer}>
-                                    <img className={classes.productImage} alt="Info graphics"/>
-                                </div>
-
-                                {/* <Box className={classes.infoContainer}>
-                                    <ol>
-                                        <li>
-                                            <Typography variant="body2" >Build your digital asset portfolio</Typography> 
-                                        </li>
-                                        <li>
-                                            <Typography variant="body2" >Earn DAO tokens</Typography> 
-                                        </li>
-                                        <li>
-                                            <Typography variant="body2" >Participate in Governance</Typography> 
-                                        </li>
-                                        <li>
-                                            <Typography variant="body2" >Collect protocol dividends</Typography> 
-                                        </li>
-                                    </ol>
-                                </Box> */}
-
+                            <div className={classes.imageContainer}>
+                                <img className={classes.productImage} alt="Info graphics"/>
+                            </div>
                         </Box>
                     </div>
                 </Box>
@@ -463,7 +445,7 @@ export const Home = () => {
                 </Box>
 
                 <Box className={classes.gridList}>
-                    <Box style={{ width: 1330, maxHeight: 240, margin: "auto" }}>
+                    <Box style={{ width: 1730, maxHeight: 240, margin: "auto" }}>
                         <Horizontal  >
                             <HeadlineBox subject="FTX" paletteIndex={0}>
                                 <Typography>
@@ -489,25 +471,40 @@ export const Home = () => {
                                 </Typography>
                             </HeadlineBox>
 
+                            <HeadlineBox subject="Three Arrows Capital" paletteIndex={3}>
+                                <Typography>
+                                    <label style={{ color:'red' }}> $10B </label> hedge fund gone <label style={{ color:'red' }}>bust</label>.  Founders on the run.
+                                </Typography>
+                            </HeadlineBox>
+
+
                             <HeadlineBox subject="BlockFi" paletteIndex={2}>
                                     <Typography>
                                         BlockFi owes between <label style={{ color:'red' }}>$1B</label> and <label style={{ color:'red' }}>10B</label> to more than 100K customers.
                                     </Typography>
                             </HeadlineBox>
 
-                            <HeadlineBox subject="Three Arrows Capital" paletteIndex={4}>
-                                <Typography>
-                                    <label style={{ color:'red' }}> $10B </label>  hedge fund gone <label style={{ color:'red' }}>bust</label>.  Founders on the run.
-                                </Typography>
+                            
+                            <HeadlineBox subject="REKT investors " paletteIndex={4}>
+                                    <Typography>
+                                        From <label style={{ color:'red' }}>73%</label> to <label style={{ color:'red' }}>81%</label> of new crypto investors lost money, research shows.
+                                    </Typography>
                             </HeadlineBox>
 
-                            <HeadlineBox subject="One coin" paletteIndex={3}>
+
+                            <HeadlineBox subject="Crypto crash" paletteIndex={1}>
+                                    <Typography>
+                                    The cryptocurrency market is down over <label style={{ color:'red' }}>$2 trillion</label> in 2022. Bitcoin lost <label style={{ color:'red' }}> 63% </label>
+                                    </Typography>
+                            </HeadlineBox>
+
+                            <HeadlineBox subject="One coin" paletteIndex={4}>
                                 <Typography>
                                     One coin defrauded investors of <label style={{ color:'red' }}>$5 billion</label> in cryptocurrencies and cash.
                                 </Typography>
                             </HeadlineBox>
 
-                            <HeadlineBox subject="Plus token" paletteIndex={1}>
+                            <HeadlineBox subject="Plus token" paletteIndex={2}>
                                 <Typography>
                                    <label style={{ color:'red' }}>$4.2 billion </label> seized from a Chinese Ponzi scheme dubbed “plus token”
                                 </Typography>
@@ -613,7 +610,7 @@ export const Home = () => {
                             <span style={{fontSize: '130%'}}>Avoid the stress of the extreme sentiment and volatility in the crypto markets.</span>
                         </Box>
                         <Box py={2}>
-                            <span style={{fontSize: '130%'}}>Let your portfolio management strategies, and the blockchain, do the hard work.</span>
+                            <span style={{fontSize: '130%'}}>Let your portfolio management strategies do the hard work.</span>
                         </Box>
                         <Box py={2}>
                             <span style={{fontSize: '130%'}}>Stay humble. Stay safe.</span>
