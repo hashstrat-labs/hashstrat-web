@@ -9,7 +9,6 @@ import { Link as RouterLink } from "react-router-dom"
 
 const useStyles = makeStyles( theme => ({
     container: {
-        padding: theme.spacing(2),
         fontSize: 18,
 
         [theme.breakpoints.down('sm')]: {

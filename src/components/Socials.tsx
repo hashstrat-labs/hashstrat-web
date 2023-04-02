@@ -1,7 +1,7 @@
 
 
 
-import { makeStyles, useTheme, Box, Link } from  "@material-ui/core"
+import { makeStyles, useTheme, Box, Link, Typography } from  "@material-ui/core"
 import { SocialIcon } from "react-social-icons"
 import { Horizontal } from "./Layout"
 import arrowLeft from "./img/arrow-left.png"
@@ -32,8 +32,12 @@ const useStyle = makeStyles( theme => ({
     },
 
     name: {
+        color: theme.palette.text.primary,
         [theme.breakpoints.down('sm')]: {
             display: 'none'
+        },
+        '&:hover': {
+            textDecoration: "underline",
         },
     },
 
@@ -61,7 +65,7 @@ export const Socials = () => {
                     <Box className={classes.social}>
                         <Horizontal valign="center">
                             <SocialIcon url="https://medium.com/@hashstrat" style={{width: 30, height: 30}} target="_blank"  bgColor={bgcolor} />
-                            <label className={classes.name}>Medium</label>
+                            <Typography className={classes.name}>Medium</Typography>
                         </Horizontal>
                         <img src={arrowLeft} className={classes.icon} />
                     </Box>
@@ -72,7 +76,7 @@ export const Socials = () => {
                         <Box className={classes.social}>
                             <Horizontal valign="center">
                                 <SocialIcon url="https://github.com/orgs/hashstrat-labs/repositories" style={{width: 30, height: 30}} target="_blank" bgColor={bgcolor} />
-                                <label className={classes.name}>GitHub</label>
+                                <Typography className={classes.name}>GitHub</Typography>
                             </Horizontal>
                             <img src={arrowLeft} className={classes.icon} />
                         </Box>
@@ -84,7 +88,7 @@ export const Socials = () => {
                         <Box className={classes.social}>
                             <Horizontal valign="center">
                                 <SocialIcon url="https://www.linkedin.com/company/hashstrat" style={{width: 30, height: 30}} target="_blank" bgColor={bgcolor} />
-                                <label className={classes.name}>LinkedIn</label>
+                                <Typography className={classes.name}>LinkedIn</Typography>
                             </Horizontal>
                             <img src={arrowLeft} className={classes.icon} />
                         </Box>
@@ -96,7 +100,7 @@ export const Socials = () => {
                         <Box className={classes.social}>
                             <Horizontal valign="center">
                                 <SocialIcon url="https://t.me/hashstrat_public" style={{width: 30, height: 30}} target="_blank"  bgColor={bgcolor} />
-                                <label className={classes.name}>Telegram</label>
+                                <Typography className={classes.name}>Telegram</Typography>
                             </Horizontal>
                             <img src={arrowLeft} className={classes.icon} />
                         </Box>

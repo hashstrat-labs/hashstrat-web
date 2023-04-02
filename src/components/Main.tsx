@@ -33,10 +33,6 @@ const useStyle = makeStyles( theme => ({
         backgroundImage: theme.palette.type === 'light' ? `url( ${background} )` : `url( ${backgroundDark} )` ,
         backgroundRepeat: "repeat",
 
-    },
-    contentWrapper: {
-        margin: "auto",
-        maxWidth: 1556,
     }
 
 }))
@@ -48,7 +44,6 @@ export const Main = ( { lightTheme, toggleTheme } : MainProps  ) =>  {
 
     return (
         <Box className={classes.container} >
-            <Box className={classes.contentWrapper} >
 
             <BrowserRouter>
                 <ScrollToTop />
@@ -86,7 +81,6 @@ export const Main = ( { lightTheme, toggleTheme } : MainProps  ) =>  {
             </BrowserRouter>
 
             </Box>
-        </Box>
 
     )
 

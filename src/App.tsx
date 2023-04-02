@@ -21,7 +21,7 @@ const App = () => {
 				secondary: lightTheme ? '#666' : '#ddd',
 			},
 			primary: {
-				main: lightTheme ? '#097F3B' : '#B6EE82',
+				main: lightTheme ? '#097F3B' : '#76D90B',
 			},
 			secondary: {
 				main: lightTheme ? '#EFE4CF' :  '#EFE4CF',

@@ -22,8 +22,8 @@ type StrategyInfo = {
 
 const useStyle = makeStyles( theme => ({
     container: {
-        maxWidth: 1300,
-        margin: "auto",
+        // maxWidth: 1300,
+        // margin: "auto",
         [theme.breakpoints.down('sm')]: {
             width: "100%",
             paddingLeft: 0,

@@ -10,14 +10,14 @@ export const Button = styled(BaseButton)(({ theme }) => (
     
     width: 210, 
     height: 50, 
-    backgroundColor: theme.palette.type === 'light' ? '#B6EE82': '#2A8019',
+    backgroundColor: theme.palette.type === 'light' ? '#B6EE82': '#3AA824',
     textTransform: "none",
     color: theme.palette.text.primary,
     boxShadow: "0 0px 0px 0 rgba(0,0,0,0)",
 
     '&:hover': {
         filter: "brightness(0.8)",
-        backgroundColor: theme.palette.type === 'light' ? '#A9EE70': '#A9EE70', // C2ECBF   '#A9EE70': '#A9EE70'
+        backgroundColor: theme.palette.type === 'light' ? '#76D90B': '#A9EE70', // C2ECBF   '#A9EE70': '#A9EE70'
         boxShadow: "0 0px 0px 0 rgba(0,0,0,0)",
         border: `0px solid ${theme.palette.text.primary}`,
     },

@@ -6,7 +6,7 @@ interface InfoBoxProps {
     emoji?: string | undefined,
     image?: string,
     title: string,
-    layout: "layout1" |  "layout2" | "layout3"
+    layout: "layout1" |  "layout2"
     paletteIndex?: number | undefined
 }
 
@@ -58,7 +58,7 @@ export const InfoBox = ({ children, title, image, emoji,  paletteIndex, layout =
             borderRadius: 20,
         },
         image: {
-            maxWidth: "100%",
+            maxWidth: "70%",
             padding: 40,
             filter: "saturate(60%)",
 
@@ -104,34 +104,7 @@ export const InfoBox = ({ children, title, image, emoji,  paletteIndex, layout =
     }))
 
 
-  const layout3 = makeStyles( theme => ({
-        container: {
-            display: "grid",
-            gap: theme.spacing(1),
-            gridTemplateColumns: "1fr",
-
-            padding: theme.spacing(2),
-            margin: 10,
-            alignItems: "center",
-            borderRadius: 20,
-            backgroundColor: backGroundColor(paletteIndex, theme),
-            
-            [theme.breakpoints.down('xs')]: {
-                minHeight: 220,
-            },
-        },
-        imageWrapper: {
-            margin: "auto",
-            backgroundColor: imgBackGroundColor(paletteIndex, theme),
-            height: 200,
-            borderRadius: 20,
-        },
-        image: {
-            height: 200,
-        }
-    }))
-
-    const classes = layout === "layout1" ? layout1() : layout === "layout2" ? layout2() : layout3()
+    const classes = layout === "layout2" ? layout2() : layout1()
 
     return (
         <div className={classes.container}>
@@ -148,7 +121,7 @@ export const InfoBox = ({ children, title, image, emoji,  paletteIndex, layout =
                     <Typography align="center" variant="h3"> <span style={{ fontSize: "180%" }}> {emoji} </span>  </Typography>
                 }
                 <Box py={1}>
-                    <Typography variant="h5"> {title} </Typography>
+                    <Typography variant="h4"> {title} </Typography>
                 </Box>
                 {children} 
             </Box>

@@ -17,6 +17,17 @@ const useStyles = makeStyles(theme => ({
         gap: theme.spacing(0),
 		padding: 0,
 		marginTop: 0,
+		paddingLeft: 60,
+		paddingRight: 60,
+
+		[theme.breakpoints.down('sm')]: {
+			paddingLeft: 20,
+			paddingRight: 20,
+        },
+		[theme.breakpoints.down('xs')]: {
+			paddingLeft: 10,
+			paddingRight: 10,
+        },
 	},
 
 	menu: {
@@ -88,7 +99,7 @@ export const Header = ({ lightTheme, toggleTheme }: HeaderProps) => {
 			<Box className={classes.container}>
 
 				<Link component={RouterLink} to="/" >
-					<Button> <img src={logoImg} style={{ width: 155, height: 34 }} alt="logo" /> </Button>
+					<Button style={{margin: 0, padding: 0}}> <img src={logoImg} style={{ width: 155, height: 34 }} alt="logo" /> </Button>
 				</Link>
 				
 				<div className={classes.rightItmesContainer}>

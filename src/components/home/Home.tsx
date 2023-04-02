@@ -2,7 +2,6 @@
 
 
 import { Typography, makeStyles, Divider, Link, Box } from "@material-ui/core"
-import { Link as LinkRouter } from "react-router-dom"
 import { InfoPanel } from "./InfoPanel"
 import { InfoBox } from "./InfoBox"
 import { ProductPreview } from "./ProductPreview"
@@ -36,16 +35,17 @@ import product03 from "./img/product_03.png"
 
 const useStyle = makeStyles(theme => ({
 
+    sectionWrapper: {
+        margin: "auto",
+        maxWidth: 1600,
+    },
+
     topSection: {
         paddingTop: 20,
         paddingBottom: 20,
 
         display: 'flex', justifyContent: 'center', alignItems: 'center',
         minHeight: "calc(100vh - 60px)",
-
-        margin: "auto",
-        paddingLeft: 10,
-        paddingRight: 10,
 
         [theme.breakpoints.down('xs')]: {
             minHeight: "calc(100vh - 20px)",
@@ -56,18 +56,19 @@ const useStyle = makeStyles(theme => ({
         display: "grid",
         gridTemplateColumns: "2fr 1fr",
         justifyItems: "center",
-        gap: 10,
+        gap: 0,
 
-        paddingLeft: 50,
-        paddingRight: 50,
+        paddingLeft: 60,
+        paddingRight: 60,
 
-        [theme.breakpoints.down('md')]: {
+        [theme.breakpoints.down('sm')]: {
+            gridTemplateColumns: "1fr",
             paddingLeft: 20,
             paddingRight: 20,
         },
 
-        [theme.breakpoints.down('sm')]: {
-            gridTemplateColumns: "1fr",
+        [theme.breakpoints.down('xs')]: {
+            // gridTemplateColumns: "1fr",
             paddingLeft: 10,
             paddingRight: 10,
         },
@@ -81,7 +82,7 @@ const useStyle = makeStyles(theme => ({
         color:  theme.palette.type === 'light' ? theme.palette.grey[800] : theme.palette.text.primary,
         
 
-        background: "-webkit-linear-gradient(45deg, #23658E, #AE3FAE 80%)",
+        background: theme.palette.type === 'light' ?  "-webkit-linear-gradient(66deg, #095703, #AE3FAE 80%)" : "-webkit-linear-gradient(66deg, #76D90B, #F467F4 80%)",
         '-webkit-background-clip': "text",
         '-webkit-text-fill-color': "transparent",
 
@@ -101,7 +102,7 @@ const useStyle = makeStyles(theme => ({
             fontSize: "3.0rem",
         },
 
-        [theme.breakpoints.down('xs')]: {
+        [theme.breakpoints.down('sm')]: {
             fontSize: "2.7rem",
             textAlign: 'center',
             marginRight: 0
@@ -149,7 +150,6 @@ const useStyle = makeStyles(theme => ({
 
 
     infoSection: {
-
         paddingTop: 0,
         marginLeft: 50,
         border: `10px solid #EBEBEB`,
@@ -160,13 +160,11 @@ const useStyle = makeStyles(theme => ({
         maxHeight: 700,
 
         [theme.breakpoints.down('lg')]: {
-            // maxWidth: 550,
             maxHeight: 470
         },
         [theme.breakpoints.down('md')]: {
             maxHeight: 420,
         },
-
         [theme.breakpoints.down('sm')]: {
             marginLeft: 0,
         },
@@ -185,11 +183,9 @@ const useStyle = makeStyles(theme => ({
 
     productImage: {
         content: `url( ${productPreview} )`,
-        // objectFit: 'fill',
         maxHeight: 680,
        
         [theme.breakpoints.down('lg')]: {
-            // maxWidth: 550,
             maxHeight: 450
         },
         [theme.breakpoints.down('md')]: {
@@ -217,7 +213,7 @@ const useStyle = makeStyles(theme => ({
 
     problemsSection: {
         margin: "auto",
-        paddingTop: 0,
+        paddingTop: 40,
         paddingLeft: 5,
         paddingRight: 5,
         paddingBottom: 40,
@@ -241,27 +237,45 @@ const useStyle = makeStyles(theme => ({
     solutionSection: {
         margin: "auto",
         paddingTop: 0,
-        paddingLeft: 5,
-        paddingRight: 5,
-        paddingBottom: 40,
+        paddingLeft: 20,
+        paddingRight: 20,
+        paddingBottom: 0,
+
+        [theme.breakpoints.down('sm')]: {
+            paddingLeft: 20,
+            paddingRight: 20,
+        },
+
+        [theme.breakpoints.down('xs')]: {
+            paddingLeft: 10,
+            paddingRight: 10,
+        },
     },
 
     
     buildPortfolioSection: {
         margin: "auto",
-        marginTop: 0,
-        paddingTop: 0,
-        paddingLeft: 5,
-        paddingRight: 5,
-        paddingBottom: 40,
+        paddingLeft: 60,
+        paddingRight: 60,
+
+        [theme.breakpoints.down('sm')]: {
+            paddingLeft: 20,
+            paddingRight: 20,
+        },
+        [theme.breakpoints.down('xs')]: {
+            paddingLeft: 10,
+            paddingRight: 10,
+        },
     },
 
     buildPortfolioItems: {
+        // backgroundColor: 'orange',
         display: "grid",
         gridTemplateColumns: "1fr 1fr 1fr",
-        gap: theme.spacing(1),
-        margin: "auto",
-        justifyItems: "center",
+        gap: theme.spacing(2),
+        justifyItems: "space-between",
+        justifyContent: "space-between",
+
         [theme.breakpoints.down('sm')]: {
             gridTemplateColumns: "1fr 1fr",
         },
@@ -271,39 +285,99 @@ const useStyle = makeStyles(theme => ({
     },
 
     strategiesSection: {
-        maxWidth: 1024,
-        margin: "auto",
+        // maxWidth: 1024,
+        // margin: "auto",
         marginTop: 30,
         paddingTop: 0,
-        paddingLeft: 5,
-        paddingRight: 5,
-        paddingBottom: 40,
-        borderRadius: 20,
-        // backgroundColor: 'red'
-    },
-
-    valueSection: {
-        margin: "auto",
-        paddingTop: 30,
-        paddingLeft: 20,
-        paddingRight: 20,
+        paddingLeft: 60,
+        paddingRight: 60,
         paddingBottom: 0,
+        borderRadius: 20,
 
         [theme.breakpoints.down('sm')]: {
+            paddingLeft: 20,
+            paddingRight: 20,
+        },
+        [theme.breakpoints.down('xs')]: {
+            paddingLeft: 10,
+            paddingRight: 10,
+        },
+    },
+
+
+    valuesSection: {
+        paddingLeft: 60,
+        paddingRight: 60,
+        [theme.breakpoints.down('sm')]: {
+            paddingLeft: 20,
+            paddingRight: 20,
+        },
+        [theme.breakpoints.down('xs')]: {
             paddingLeft: 0,
             paddingRight: 0,
         },
     },
+
+    valuesItems: {
+        // maxWidth: 1024,
+
+        // backgroundColor: 'red',
+        display: "grid",
+        gridTemplateColumns: "1fr 1fr 1fr",
+        gridTemplateAreas: `
+            'a a b' 
+            'c d d'
+        `,
+        
+        gap: theme.spacing(2),
+        paddingBottom: 0,
+       
+        margin: "auto",
+
+        [theme.breakpoints.down('sm')]: {
+            gridTemplateColumns: "1fr 1fr",
+            gridTemplateAreas: `
+                'a a' 
+                'b c'
+                'd d'
+            `,
+        },
+
+        [theme.breakpoints.down('xs')]: {
+            margin: 10,
+            gridTemplateColumns: "1fr",
+            gridTemplateAreas: `
+                'a' 
+                'b'
+                'c'
+                'd'
+            `,
+        },
+    },
+    
+    gridElemA: {
+        gridArea: "a",
+    },
+    gridElemB: {
+        gridArea: "b",
+    },
+    gridElemC: {
+        gridArea: "c"
+    },
+    gridElemD: {
+        gridArea: "d"
+    },
+
 
     faqSection: {
         display: "grid",
         gridTemplateColumns: "1fr 2fr",
         gap: theme.spacing(0),
 
-        marginTop: 30,
-        paddingTop: 30,
-        paddingLeft: 40,
-        paddingRight: 40,
+        marginTop: 0,
+        paddingTop: 0,
+        paddingLeft: 60,
+        paddingRight: 60,
         paddingBottom: 20,
 
         [theme.breakpoints.down('sm')]: {
@@ -320,56 +394,10 @@ const useStyle = makeStyles(theme => ({
 
     faqContent: {
         [theme.breakpoints.down('xs')]: {
-            padding: 0,
-            margin: 0,
+            paddingLeft: 10,
+            paddingRight: 10,
         },
     },
-
-    valuesItems: {
-        display: "grid",
-        gridTemplateColumns: "1fr 1fr 1fr",
-        gridTemplateAreas: `
-            'a a b' 
-            'c d d'
-        `,
-        
-        gap: theme.spacing(2),
-        paddingBottom: 0,
-        maxWidth: 1024,
-        margin: "auto",
-
-        [theme.breakpoints.down('sm')]: {
-            gridTemplateColumns: "1fr 1fr",
-            gridTemplateAreas: `
-                'a a' 
-                'b c'
-                'd d'
-            `,
-        },
-
-        [theme.breakpoints.down('xs')]: {
-            gridTemplateColumns: "1fr",
-            gridTemplateAreas: `
-                'a' 
-                'b'
-                'c'
-                'd'
-            `,
-        },
-    },
-    
-    gridElemA: {
-        gridArea: "a"
-    },
-    gridElemB: {
-        gridArea: "b"
-    },
-    gridElemC: {
-        gridArea: "c"
-    },
-    gridElemD: {
-        gridArea: "d"
-    }
 
 }))
 
@@ -386,8 +414,8 @@ export const Home = () => {
 
         <Divider style={{ marginTop: 0, marginBottom: 0 }} />
 
-            <section className={classes.topSection}>
-                <Box>
+            <section className={classes.sectionWrapper}>
+                <Box className={classes.topSection} >
                     <div className={classes.titleSection} >
                         <Box>
                             <div>
@@ -427,8 +455,9 @@ export const Home = () => {
                 </Box>
             </section>
 
+            <Divider style={{ marginTop: 0, marginBottom: 0 }} />
+
             <section className={classes.problemsSection}>
-                <Divider style={{ marginTop: 0, marginBottom: 40 }} />
 
                 <Box>
                     <Typography variant="body2" align="center" color="error" style={{textTransform: "uppercase", fontWeight: 600 }}>The Problem</Typography>
@@ -561,184 +590,191 @@ export const Home = () => {
 
             </section>
 
-            <section className={classes.solutionSection}>
-                <Divider style={{ marginTop: 0, marginBottom: 40 }} />
-
-                <Box pb={3}>
-                    <Typography variant="body2" color="primary" align="center" style={{textTransform: "uppercase", fontWeight: 600 }}>
-                       Let's fix it
-                    </Typography>
-                    <Typography variant="h3" align="center">
-                        HashStrat, your crypto portfolio, automated.
-                    </Typography>
-                    <Box mt={1}>
-                    <Typography variant="body1" align="center">
-                        The first DeFi protocol that simplifies the management of your crypto investments. 
-                    </Typography>
+            <Divider style={{ marginTop: 0, marginBottom: 40 }} />
+            
+            <section className={classes.sectionWrapper}>
+                <Box className={classes.solutionSection}>
+                    <Box pb={3}>
+                        <Typography variant="body2" color="primary" align="center" style={{textTransform: "uppercase", fontWeight: 600 }}>
+                        Let's fix it
+                        </Typography>
+                        <Typography variant="h3" align="center">
+                            HashStrat, your crypto portfolio, automated.
+                        </Typography>
+                        <Box mt={2}>
+                            <Typography variant="body1" align="center">
+                                The first DeFi protocol that simplifies the management of your crypto investments. 
+                            </Typography>
+                        </Box>
                     </Box>
-                </Box>
 
+                    <Box>
+                        <ProductPreview emoji="❤️" title="Hold only the best assets" layout="layout1" image={product01}>
+                            <Box pb={2}>
+                                <span style={{fontSize: '130%'}}>Your gains come from the appreciation of the best crypto assets over the long term. Not yield farming, lending or shitcoin trading. </span>
+                            </Box>
+                            <Box py={2}>
+                                <span style={{fontSize: '130%'}}>No need to over-diversify. BTC and ETH are the “index” over the whole crypto and web3 markets.</span>
+                            </Box>
+                            <Box py={2}>
+                                <span style={{fontSize: '130%'}}>Stay in control. Always.</span>
+                            </Box>
+                        </ProductPreview>
 
-                <Box>
-                    <ProductPreview emoji="❤️" title="Hold only the best assets" layout="layout1" image={product01}>
-                        <Box pb={2}>
-                            <span style={{fontSize: '130%'}}>Your gains should come from the appreciation of the best crypto assets over the long term. Not yield farming, lending or shitcoin trading. </span>
-                        </Box>
-                        <Box py={2}>
-                            <span style={{fontSize: '130%'}}>No need to over-diversify. BTC and ETH are the “index” over the whole crypto and web3 markets.</span>
-                        </Box>
-                        <Box py={2}>
-                            <span style={{fontSize: '130%'}}>Stay in control. Always.</span>
-                        </Box>
-                    </ProductPreview>
+                        <ProductPreview emoji="🤖" title="Automate your portfolio management"  layout="layout2" image={product02}>
+                            <Box pb={2}>
+                                <span style={{fontSize: '130%'}}>Diversify your portfolio management strategies to improve the performance of your portfolio in various market conditions.</span>
+                            </Box>
+                            <Box py={2}>
+                                <span style={{fontSize: '130%'}}>Automate your buys and sells to ensure appropriate exposure and risk management in your portfolio.</span>
+                            </Box>
+                            <Box py={2}>
+                                <span style={{fontSize: '130%'}}>Don't be the guy buying the top and selling the bottom.</span>
+                            </Box>
+                        </ProductPreview>
 
-                    <ProductPreview emoji="🤖" title="Automate your portfolio management"  layout="layout2" image={product02}>
-                        <Box pb={2}>
-                            <span style={{fontSize: '130%'}}>Build a balanced portfolio with your favourite assets.</span>
-                        </Box>
-                        <Box py={2}>
-                            <span style={{fontSize: '130%'}}>Automate your buys and sells to ensure appropriate exposure and risk management oevr the market cycles.</span>
-                        </Box>
-                        <Box py={2}>
-                            <span style={{fontSize: '130%'}}>Don't be the guy buying the top and selling the bottom.</span>
-                        </Box>
-                    </ProductPreview>
-
-                    <ProductPreview emoji="😌" title="Find peace of mind" layout="layout1" image={product03}>
-
-                        <Box pb={2}>
-                            <span style={{fontSize: '130%'}}>Avoid the stress of the extreme sentiment and volatility in the crypto markets.</span>
-                        </Box>
-                        <Box py={2}>
-                            <span style={{fontSize: '130%'}}>Let your portfolio management strategies do the hard work.</span>
-                        </Box>
-                        <Box py={2}>
-                            <span style={{fontSize: '130%'}}>Stay humble. Stay safe.</span>
-                        </Box>
-
-                    </ProductPreview>
-                </Box>
-
-            </section>
-
-
-            <section className={classes.buildPortfolioSection}>
-
-                <Box pb={2}>
-                    <Typography variant="body2" color="primary" align="center" style={{textTransform: "uppercase", fontWeight: 600 }}>
-                       What we offer
-                    </Typography>
-                    <Typography variant="h3" align="center">Build your portfolio in 3 easy steps</Typography>
-                </Box>
-
-                <Box pb={4}>
-                    <Typography variant="body1" align="center">
-                        Choose your favourite assets and portfolio management strategies. <br/>
-                        Deposit. HashStrat will take care of the rest.
-                    </Typography>
-                  
-                </Box>
-
-                <Box className={classes.buildPortfolioItems} >
-                    <PortfolioStep step={1} title="Choose your favourite assets" image={portfolio01} />
-                    <PortfolioStep step={2} title="Pick your portfolio management strategies" image={portfolio02} />
-                    <PortfolioStep step={3} title="Deposit and access your portfolio" image={portfolio03} />
+                        <ProductPreview emoji="😌" title="Find peace of mind" layout="layout1" image={product03}>
+                            <Box pb={2}>
+                                <span style={{fontSize: '130%'}}>Avoid the stress due to the extreme sentiment and volatility in the crypto markets.</span>
+                            </Box>
+                            <Box py={2}>
+                                <span style={{fontSize: '130%'}}>Let your portfolio management strategies do the hard work and keep your investments in check.</span>
+                            </Box>
+                            <Box py={2}>
+                                <span style={{fontSize: '130%'}}>Stay humble. Stay safe.</span>
+                            </Box>
+                        </ProductPreview>
+                    </Box>
                 </Box>
             </section>
 
+            <Divider style={{ marginTop: 40, marginBottom: 60 }} />
 
-            <section className={classes.strategiesSection}>
-                <Box pb={2}>
-                    <Typography variant="body2" color="primary" align="center" style={{textTransform: "uppercase", fontWeight: 600 }}>
-                       How we do it
-                    </Typography>
-                    <Typography variant="h3" align="center">Our Strategies</Typography>
+            <section className={classes.sectionWrapper}>
+                <Box className={classes.buildPortfolioSection}>
+                    <Box pb={2}>
+                        <Typography variant="body2" color="primary" align="center" style={{textTransform: "uppercase", fontWeight: 600 }}>
+                        What we offer
+                        </Typography>
+                        <Typography variant="h3" align="center">Build your portfolio in 3 easy steps</Typography>
+                    </Box>
+
+                    <Box pb={4}>
+                        <Typography variant="body1" align="center">
+                            Choose your favourite assets and portfolio management strategies. <br/>
+                            Deposit. HashStrat will take care of the rest.
+                        </Typography>
+                    
+                    </Box>
+
+                    <Box className={classes.buildPortfolioItems} >
+                        <PortfolioStep step={1} title="Choose your favourite assets" image={portfolio01} />
+                        <PortfolioStep step={2} title="Pick your portfolio management strategies" image={portfolio02} />
+                        <PortfolioStep step={3} title="Deposit and access your portfolio" image={portfolio03} />
+                    </Box>
                 </Box>
-
-                <Box pb={2}>
-                    <Typography variant="body1" align="center">
-                       Designed to generate returns and manage risk in your portfolio.
-                    </Typography>
-                </Box>
-
-                <StrategyCarousel />
-
             </section>
 
-            <section className={classes.valueSection}>
+            <Divider style={{ marginTop: 50, marginBottom: 60 }} />
 
-                <Box pb={2}>
-                    <Typography variant="body2" color="primary" align="center" style={{textTransform: "uppercase", fontWeight: 600 }}>
-                       What we believe in
-                    </Typography>
-                    <Typography variant="h3" align="center">Our Values</Typography>
-                </Box>
+            <section className={classes.sectionWrapper}>
+                <Box className={classes.strategiesSection}>
 
-                <Box pb={2}>
-                    <Typography variant="body1" align="center">
-                        A protocol that is truly secure, open, trustless and transparent.<br/>
-                        The way DeFi is meant to be.
-                    </Typography>
-                </Box>
-
-                <Box className={classes.valuesItems} >
-                    <Box className={classes.gridElemA}>
-                        <InfoBox title="Security" image={lock} layout="layout1"  paletteIndex={0} >
-                            <Typography variant="body2">
-                                All code is open source and smart contracts are verified on-chain.
-                                This means their behaviour is predictable and transparent.
-                                HashStrat smart contracts are immutable. Nobody can stop them or change their behaviour.
-                            </Typography>
-                        </InfoBox>
+                    <Box pb={2}>
+                        <Typography variant="body2" color="primary" align="center" style={{textTransform: "uppercase", fontWeight: 600 }}>
+                        How we do it
+                        </Typography>
+                        <Typography variant="h3" align="center">Our Strategies</Typography>
                     </Box>
 
-                    <Box className={classes.gridElemB}>
-                        <InfoBox title="Self-sovereignty" image={key} layout="layout2" paletteIndex={2} >
-                            <Typography variant="body2">
-                                Users interact directly with the blockchain through their digital wallets and stay in control of their funds. 
-                                No personal information is ever shared or leaked.
-                            </Typography>
-                        </InfoBox>
-                    </Box>
-
-                    <Box className={classes.gridElemC}>
-                        <InfoBox title="Open Governance" image={dao} layout="layout2"  paletteIndex={1}>
-                            <Typography variant="body2">
-                                All users can claim their share of HST tokens, and become members of the HashStrat DAO.
-                                HST has a fixed supply, fair distribution and allows to participate in protocol governance and revenue sharing.
-                            </Typography>
-                        </InfoBox>
-                    </Box>
-
-                    <Box className={classes.gridElemD}>
-                        <InfoBox title="Autonomy" image={autonomy} layout="layout1"  paletteIndex={3} >
-                            <Typography variant="body2">
-                                HashStrat uses <Link href="https://docs.chain.link/docs/chainlink-automation/introduction/" target="_blank">Chainlink Automation</Link> to automate
-                                the execution of all on-chain strategies.
-                                This means you can trust the blockchain, and a decentralised network of independent nodes, to keep managing your investments.
-                            </Typography>
-                        </InfoBox>
-                    </Box>
-
-                </Box>
-
-            </section>
-
-     
-            <section className={classes.faqSection}  > 
-                <Box>
-                    <Box pb={0}>
-                        <Typography variant="body2" color="primary" style={{textTransform: "uppercase", fontWeight: 600 }}>
-                            Know More
+                    <Box pb={4}>
+                        <Typography variant="body1" align="center">
+                        Designed to generate returns and manage risk in your portfolio.
                         </Typography>
                     </Box>
-                    <Box>
-                        <Typography variant="h2"> Frequently Asked Questions </Typography>
+
+                    <StrategyCarousel />
+
+                </Box>
+            </section>
+
+            <Divider style={{ marginTop: 60, marginBottom: 60 }} />
+
+            <section className={classes.sectionWrapper}>
+                <Box className={classes.valuesSection}>
+                    <Box pb={2}>
+                        <Typography variant="body2" color="primary" align="center" style={{textTransform: "uppercase", fontWeight: 600 }}>
+                        What we believe in
+                        </Typography>
+                        <Typography variant="h3" align="center">Our Values</Typography>
+                    </Box>
+
+                    <Box pb={4}>
+                        <Typography variant="body1" align="center">
+                            A protocol that is truly secure, open, trustless and transparent.<br/>
+                            The way DeFi is meant to be.
+                        </Typography>
+                    </Box>
+
+                    <Box className={classes.valuesItems} >
+                        <Box className={classes.gridElemA}>
+                            <InfoBox title="Security" image={lock} layout="layout1"  paletteIndex={0} >
+                                <Typography variant="body1">
+                                    All code is open source and smart contracts are verified on-chain.
+                                    This means their behaviour is predictable and transparent.
+                                    HashStrat smart contracts are immutable. Nobody can stop them or change their behaviour.
+                                </Typography>
+                            </InfoBox>
+                        </Box>
+
+                        <Box className={classes.gridElemB}>
+                            <InfoBox title="Self-sovereignty" image={key} layout="layout2" paletteIndex={2} >
+                                <Typography variant="body1">
+                                    Users interact directly with the blockchain through their digital wallets and stay in control of their funds. 
+                                    No personal information is ever shared or leaked.
+                                </Typography>
+                            </InfoBox>
+                        </Box>
+
+                        <Box className={classes.gridElemC}>
+                            <InfoBox title="Open Governance" image={dao} layout="layout2"  paletteIndex={1}>
+                                <Typography variant="body1">
+                                    All users can claim their share of HST tokens, and become members of the HashStrat DAO.
+                                    HST has a fixed supply, fair distribution and allows to participate in protocol governance and revenue sharing.
+                                </Typography>
+                            </InfoBox>
+                        </Box>
+
+                        <Box className={classes.gridElemD}>
+                            <InfoBox title="Autonomy" image={autonomy} layout="layout1"  paletteIndex={3} >
+                                <Typography variant="body1">
+                                    HashStrat uses <Link href="https://docs.chain.link/docs/chainlink-automation/introduction/" target="_blank">Chainlink Automation</Link> to automate
+                                    the execution of all on-chain strategies.
+                                    This means you can trust the blockchain, and a decentralised network of independent nodes, to keep managing your investments.
+                                </Typography>
+                            </InfoBox>
+                        </Box>
                     </Box>
                 </Box>
-                
-                <Box className={classes.faqContent}>
-                    <FaqContent />
+            </section>
+
+            <Divider style={{ marginTop: 60, marginBottom: 60 }} />
+
+            <section className={classes.sectionWrapper}  > 
+                <Box className={classes.faqSection}>
+                    <Box >
+                        <Box pb={0}>
+                            <Typography variant="body2" color="primary" style={{textTransform: "uppercase", fontWeight: 600 }}>
+                                Know More
+                            </Typography>
+                        </Box>
+                        <Box>
+                            <Typography variant="h2"> Frequently Asked Questions </Typography>
+                        </Box>
+                    </Box>
+                    <Box className={classes.faqContent}>
+                        <FaqContent />
+                    </Box>
                 </Box>
             </section>
         </Box>

@@ -38,8 +38,6 @@ export const ProductPreview = ({ children, title, image, emoji, layout = "layout
                 borderRadius: 20,
                 border: "1px solid #E6E6E6",
                 backgroundColor: theme.palette.type === 'light' ? '#F7F5E8' : '#3b3934',
-                // const backgroundColors = ['#F7F0E8', '#EEF8F4', '#F0F4EB', '#F7F5E8']
-                // const backgroundColorsDark = ['#706562', '#3b3a3d', '#585e51', '#3b3934']
 
             },
         },
@@ -57,7 +55,6 @@ export const ProductPreview = ({ children, title, image, emoji, layout = "layout
             display: "grid",
             alignItems: "center",
             margin: "auto",
-            // maxWidth: 720,
             borderRadius: 20,
         },
         image: {
@@ -65,11 +62,7 @@ export const ProductPreview = ({ children, title, image, emoji, layout = "layout
             padding: 40,
             filter: theme.palette.type === 'light' ? "saturate(40%)" : "saturate(40%) brightness(0.8)",
 
-            [theme.breakpoints.down('sm')]: {
-                // maxWidth: 180,
-            },
             [theme.breakpoints.down('xs')]: {
-                // margin: "auto",
                 display: 'none'
             },
         },
@@ -105,8 +98,6 @@ export const ProductPreview = ({ children, title, image, emoji, layout = "layout
                 borderRadius: 20,
                 border: "1px solid #E6E6E6",
                 backgroundColor: theme.palette.type === 'light' ? '#EEF8F4' : '#3b3a3d',
-                // const backgroundColors = ['#F7F0E8', '#EEF8F4', '#F0F4EB', '#F7F5E8']
-                // const backgroundColorsDark = ['#706562', '#3b3a3d', '#585e51', '#3b3934']
             },
         },
 
@@ -122,20 +113,14 @@ export const ProductPreview = ({ children, title, image, emoji, layout = "layout
             display: "grid",
             alignItems: "center",
             margin: "auto",
-            // height: "100%",
-            // maxWidth: 720,
             borderRadius: 20,
         },
         image: {
             maxWidth: "100%",
             padding: 40,
             filter: theme.palette.type === 'light' ? "saturate(40%)" : "saturate(40%) brightness(0.8)",
-
-            [theme.breakpoints.down('sm')]: {
-                // maxWidth: 180,
-            },
+    
             [theme.breakpoints.down('xs')]: {
-                // margin: "auto",
                 display: 'none'
             },
         },
