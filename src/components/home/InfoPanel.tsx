@@ -1,108 +1,92 @@
 
 import { makeStyles, Box, Typography, Link } from "@material-ui/core"
-import { Vertical } from "../Layout"
+import { Horizontal, Vertical } from "../Layout"
 import { ButtonSecondary } from "../shared/Button"
 
 interface InfoPanelProps {
-    subject: string | undefined
+    subject: string
     title: string,
     children: React.ReactNode,
     image?: string,
-    layout: "layout1" |  "layout2"
-    url? : string | undefined
+    url: string
 }
 
-const layout1 = makeStyles( theme => ({
-    container: {
-        width: "calc(100% - 40px)",
-        padding: theme.spacing(2),
-        margin: 10,
-        alignItems: "center",
-        borderRadius: 20,
-        backgroundColor: '#FAFAFA',
-        background: theme.palette.type === 'light' ? 
-         "linear-gradient(180deg, rgba(244,244,244,1) 0%, rgba(241,241,241,1) 66%, rgba(218,218,218,1) 100%)" :
-         "linear-gradient(180deg, rgba(79,78,78,1) 0%, rgba(48,48,48,1) 64%, rgba(33,33,33,1) 100%)",
 
-        [theme.breakpoints.down('xs')]: {
+
+export const InfoPanel = ({ subject, children, title, image, url } : InfoPanelProps) => {
+   
+
+    const layout1 = makeStyles( theme => ({
+        container: {
             margin: 0,
-            minWidth: "100%",
-        },
-    },
-    image: {
-        maxWidth: 120,
-        margin: "auto",
-        [theme.breakpoints.down('xs')]: {
-            margin: "auto",
-        },
-    }
-}))
+            maxWidth: 400,
+            width: "calc(100% - 40px)",
+            padding: theme.spacing(2),
+            alignItems: "center",
+            borderRadius: 20,
+            backgroundColor: '#FAFAFA',
+            background: theme.palette.type === 'light' ? 
+            "linear-gradient(180deg, rgba(244,244,244,1) 0%, rgba(241,241,241,1) 66%, rgba(218,218,218,1) 100%)" :
+            "linear-gradient(180deg, rgba(79,78,78,1) 0%, rgba(48,48,48,1) 64%, rgba(33,33,33,1) 100%)",
 
-const layout2 = makeStyles( theme => ({
-    container: {
-        minWidth: 480,
-
-        padding: theme.spacing(2),
-        border: "1px solid #aaa",
-        margin: 10,
-        alignItems: "center",
-        borderRadius: 12,
+            [theme.breakpoints.down('xs')]: {
+                margin: 0,
+                minWidth: "100%",
+            },
+        },
+        image: {
+            maxWidth: 100,
+            [theme.breakpoints.down('md')]: {
+                display: "none",
+            },
+            [theme.breakpoints.down('xs')]: {
+                margin: "auto",
+            },
+        }, 
         
-        [theme.breakpoints.down('lg')]: {
-            display: "grid",
-            gap: theme.spacing(1),
-            gridTemplateColumns: "1fr",
-        },
-    },
-    image: {
-        maxWidth: 120,
-        margin: "auto",
-        [theme.breakpoints.down('xs')]: {
-            margin: "auto",
-        },
-    }
-}))
+        button: {
+            paddingTop: 20, 
+            display: 'flex', 
+            flexDirection: 'row', 
+            alignItems: "flex-end", 
+            justifyContent:'space-between',
 
+            [theme.breakpoints.down('xs')]: {
+                margin: "auto",
+            },
+        }
+    }))
 
-export const InfoPanel = ({ subject, children, title, image, url, layout = "layout1" } : InfoPanelProps) => {
-    const classes =  layout === "layout1" ? layout1() : layout2()
+    const classes = layout1()
 
     return (
         <div className={classes.container}>
             <Box px={2} style={{height: '100%'}}>
                 <Vertical>
-                    { image &&
-                        <div style={{textAlign: "center", alignItems: "center" }}>
-                            <img src={image} className={classes.image} alt=""></img> 
-                        </div>
-                    }
-                    {
-                        subject && 
-                        <Typography variant="body2" align="left" color="textPrimary" >
-                        <strong> {subject} </strong>
-                        </Typography>
-                    }
-                    <Box py={1} >
-                        <Box >
-                            <Typography variant="h5" align="left"> {title} </Typography>
+
+                    <Box>
+                        <Box pb={1}>
+                            <Typography variant="body1" align="left" color="error" >
+                                <strong> {subject} </strong>
+                            </Typography>                 
                         </Box>
-                    
+                        <Typography variant="h5" align="left"> {title} </Typography>
                     </Box>
 
-                    <Box style={{minHeight: 160}}>
+                    <Box style={{ }}>
                         {children} 
                     </Box>
-
-                    { url && 
-                        <Box>
-                            <Link href={`${url}`} target="_blank" style={{ textDecoration: 'none' }} >
-                                <ButtonSecondary variant="outlined" color="primary" >Learn more</ButtonSecondary>
-                            </Link>
-                        </Box>
-                    }
+                
+                    <Box className={classes.button}>
+                        <Link href={`${url}`} target="_blank" style={{ textDecoration: 'none' }} >
+                            <ButtonSecondary style={{minWidth: 150}} variant="outlined" color="primary" >Learn more</ButtonSecondary>
+                        </Link>
+                        <img src={image} className={classes.image} alt="" />
+                    </Box>
                 </Vertical>
             </Box>
-                
+
+
         </div>
     )
 }

@@ -27,14 +27,10 @@ interface MainProps {
 const useStyle = makeStyles( theme => ({
     container: {
         transform: "scale(1.0)",
-
         backgroundColor: theme.palette.type === 'light' ? '#FAFAFA' : '#140F0C',
-
         backgroundImage: theme.palette.type === 'light' ? `url( ${background} )` : `url( ${backgroundDark} )` ,
         backgroundRepeat: "repeat",
-
     }
-
 }))
 
 

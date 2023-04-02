@@ -60,7 +60,11 @@ export const PortfolioStep = ({ step, title, image } : PortfolioStepProps ) => {
         },
         title: {
             fontSize: '1.4rem',
-            color:  theme.palette.type === 'light' ? theme.palette.text.primary: '#333'
+            color:  theme.palette.type === 'light' ? theme.palette.text.primary: '#333',
+                        
+            [theme.breakpoints.down('md')]: {
+                fontSize: '1.2rem',
+            },
         }
     }))
 

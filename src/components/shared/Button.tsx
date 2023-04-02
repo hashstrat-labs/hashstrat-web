@@ -31,7 +31,7 @@ export const ButtonSecondary = styled(BaseButton)(({ theme }) => (
     borderRadius: 4,
 
     marginLeft: 0,
-    width: 210, 
+    // width: 210, 
     height: 50, 
     fontSize: '130%',
 

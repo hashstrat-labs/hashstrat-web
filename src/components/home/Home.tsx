@@ -21,6 +21,7 @@ import dao from "./img/governance.png"
 
 import centralized from "./img/centralized.png"
 import decentralized from "./img/decentralized.png"
+import diyInvesting from "./img/diy-investing.png"
 
 
 import productPreview from "./img/product-preview.jpg"
@@ -221,16 +222,28 @@ const useStyle = makeStyles(theme => ({
     },
 
     problemsItems: {
-        maxWidth: 1100,
-        display: "grid",
-        gridTemplateColumns: "1fr 1fr",
-        gridColumnGap: 0,
-        gridRowGap: 20,
+        // maxWidth: 1100,
         paddingTop: 20,
-        margin: "auto",
-        justifyItems: "center",
+        paddingLeft: 30,
+        paddingRight: 30,
+
+        display: "grid",
+        gridTemplateColumns: "1fr 1fr 1fr",
+        gridColumnGap: 10,
+        gridRowGap: 10,
+        justifyItems: 'center',
+
+        [theme.breakpoints.down('sm')]: {
+            gridTemplateColumns: "1fr 1fr",
+            gridColumnGap: 0,
+            paddingLeft: 0,
+            paddingRight: 0,
+        },
+
         [theme.breakpoints.down('xs')]: {
             gridTemplateColumns: "1fr",
+            paddingLeft: 0,
+            paddingRight: 0,
         },
     },
 
@@ -441,7 +454,7 @@ export const Home = () => {
                                         <Button variant="contained" color="primary" >Start Investing</Button>
                                     </Link>
                                     <Link href="./whitepaper.pdf" target="_blank" style={{ textDecoration: 'none' }} >
-                                        <ButtonSecondary variant="outlined" color="primary"  >White paper</ButtonSecondary>
+                                        <ButtonSecondary style={{ minWidth: 210 }} variant="outlined" color="primary"  >White paper</ButtonSecondary>
                                     </Link>
                             </div>
                         </Box>
@@ -544,42 +557,50 @@ export const Home = () => {
                 </Box>
 
                 <Box className={classes.problemsItems} >
+                   
+                     <InfoPanel 
+                        subject="Do-it-yourself investors"
+                        title="“FOMO in and get REKT”" 
+                        image={diyInvesting} 
+                        url="https://medium.com/@hashstrat/why-hashstrat-bb850155e5cb"
+                    >
+                        <Box mt={3}>
+                            <Typography align="left" variant="body1" >
+                                Inexperienced investors come with expectation of easy profits 
+                                but YOLO in at the wrong time and panic-sell, due to the market extreme volatility.
+                            </Typography>
+                        </Box>
+                    </InfoPanel>
+
                     <InfoPanel 
                         subject="Centralized Finance"
                         title="“Not your keys, not your coins”" 
                         image={centralized} 
-                        layout="layout1"
                         url="https://medium.com/@hashstrat/why-hashstrat-bb850155e5cb"
                     >
                         <Box mt={3}>
-                            <Typography align="left" variant="body1" >Incompetence and mismanagement, including:</Typography>
+                            <Typography align="left" variant="body1" >
+                                Incompetence and mismanagement including rehypothecation of investors' funds,
+                                appalling risk management, lack of integrity and fraud.
+                            </Typography>
                         </Box>
-                        <ul>
-                            <li>Rehypothecation of investors' funds.</li>
-                            <li>Appalling risk management.</li>
-                            <li>Lack of integrity and fraud.</li>
-                        </ul>
-             
                     </InfoPanel>
 
                     <InfoPanel 
                         subject="Decentralized Finance"
                         title="“It's not much, but it's honest work”" 
                         image={decentralized} 
-                        layout="layout1"
                         url="https://medium.com/@hashstrat/why-hashstrat-bb850155e5cb"
                     >
 
                         <Box mt={3}>
-                            <Typography align="left" variant="body1" >A choice between low APY and rug pulls    :</Typography>
+                            <Typography align="left" variant="body1" >
+                                Legit protocols only offer minimal returns.
+                                Scams entice you with impossible gains, but “when you don't know where the API comes from, you are the APY”.
+                            </Typography>
                         </Box>
-                        <ul style={{maxWidth: 470, marginBottom: 30}}>
-                            <li>Legit protocols can only offer low APY, not worth the risks.</li>
-                            <li>Scams entice you with impossible gains, but
-                            “when you don't know where the API comes from, you are the APY”.
-                             </li>
-                        </ul>
                     </InfoPanel>
+
                 </Box>
 
                 <Box pt={3}>
