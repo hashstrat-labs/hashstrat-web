@@ -13,13 +13,14 @@ export const TrendFollowingSummary = () => {
             <Typography variant="h5">
                 <strong> Trend Following </strong>
             </Typography>
-            <Typography>
+
+            <Typography style={{marginTop: 10}}>
                 A momentum strategy trading in the direction of the underlying trend.
             </Typography>
             
             <div style={{marginTop: 10}}>
-                <Link href="https://medium.com/@hashstrat/trend-following-strategy-7dce9756eaa" target="_blank" > Learn More <Launch style={{ height: 15, transform: "translateY(2px)" }} />  </Link>
-                &nbsp;&nbsp;&nbsp;&nbsp;
+                <Link component={RouterLink} to={`/sim?strategy=TrendFollowing&from=2019-01-01`} style={{ paddingRight: 20 }} >Strategy Simulator</Link>
+                <Link href="https://medium.com/@hashstrat/trend-following-strategy-7dce9756eaa" target="_blank" style={{ paddingRight: 20 }} > Learn More <Launch style={{ height: 15, transform: "translateY(2px)" }} />  </Link>
                 <Link href="https://github.com/hashstrat-labs/hashstrat-pool/blob/master/contracts/strategies/TrendFollowV1.sol">GitHub <Launch style={{ height: 15, transform: "translateY(2px)" }} /> </Link>
             </div>
         </div>

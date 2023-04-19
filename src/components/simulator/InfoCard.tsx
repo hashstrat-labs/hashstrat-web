@@ -1,4 +1,4 @@
-import { Typography, Card, CardContent } from "@material-ui/core"
+import { Typography, Card, CardContent, Box } from "@material-ui/core"
 import { utils } from "ethers"
 
 
@@ -15,8 +15,8 @@ export const InfoCard = ({type, title, value, detailTitle, detailValue }: InfoCa
     console.log("detailTitle", detailTitle, "detailValue", detailValue)
 
     return (
-        <Card style={{ maxWidth: 220, borderRadius: 12, borderColor: "#aaa" }} variant="outlined" >
-            <CardContent>
+        <Box style={{ maxWidth: 220, borderRadius: 12, border: "1px solid #aaa" }}>
+            <Box p={3} >
                 <div style={{ display:'flex', justifyContent:'center' }}> 
                     <Typography variant="body1" style={{ marginBottom: 20, fontWeight: 600 }}>{title} </Typography>
                 </div>
@@ -34,7 +34,7 @@ export const InfoCard = ({type, title, value, detailTitle, detailValue }: InfoCa
                         {detailTitle}: { type === 'amount' ? '$' : '' }{ type === 'text' ? detailValue : type === 'amount' || type === 'percentage' ? utils.commify( detailValue ) : '' }{ type === 'percentage' ? '%' : '' }
                     </Typography>
                 } 
-            </CardContent>
-        </Card>
+            </Box>
+        </Box>
     )
 }

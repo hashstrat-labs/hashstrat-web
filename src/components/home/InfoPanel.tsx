@@ -16,10 +16,10 @@ interface InfoPanelProps {
 export const InfoPanel = ({ subject, children, title, image, url } : InfoPanelProps) => {
    
 
-    const layout1 = makeStyles( theme => ({
+    const layout = makeStyles( theme => ({
         container: {
             margin: 0,
-            maxWidth: 400,
+            minHeight: 450,
             width: "calc(100% - 40px)",
             padding: theme.spacing(2),
             alignItems: "center",
@@ -32,11 +32,16 @@ export const InfoPanel = ({ subject, children, title, image, url } : InfoPanelPr
             [theme.breakpoints.down('xs')]: {
                 margin: 0,
                 minWidth: "100%",
+                minHeight: 320,
             },
         },
         image: {
-            maxWidth: 100,
+            maxWidth: 140,
             [theme.breakpoints.down('md')]: {
+                display: "none",
+                maxWidth: 60,
+            },
+            [theme.breakpoints.down('sm')]: {
                 display: "none",
             },
             [theme.breakpoints.down('xs')]: {
@@ -57,7 +62,7 @@ export const InfoPanel = ({ subject, children, title, image, url } : InfoPanelPr
         }
     }))
 
-    const classes = layout1()
+    const classes = layout()
 
     return (
         <div className={classes.container}>
@@ -70,7 +75,7 @@ export const InfoPanel = ({ subject, children, title, image, url } : InfoPanelPr
                                 <strong> {subject} </strong>
                             </Typography>                 
                         </Box>
-                        <Typography variant="h5" align="left"> {title} </Typography>
+                        <Typography variant="h4" align="left"> {title} </Typography>
                     </Box>
 
                     <Box style={{ }}>
@@ -79,7 +84,7 @@ export const InfoPanel = ({ subject, children, title, image, url } : InfoPanelPr
                 
                     <Box className={classes.button}>
                         <Link href={`${url}`} target="_blank" style={{ textDecoration: 'none' }} >
-                            <ButtonSecondary style={{minWidth: 150}} variant="outlined" color="primary" >Learn more</ButtonSecondary>
+                            <ButtonSecondary style={{ minWidth: 150 }} variant="outlined" color="primary" >Learn more</ButtonSecondary>
                         </Link>
                         <img src={image} className={classes.image} alt="" />
                     </Box>

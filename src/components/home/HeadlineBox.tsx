@@ -31,15 +31,12 @@ export const HeadlineBox = ({ subject, children, paletteIndex = 0} : HeadlineBox
     const style = makeStyles( theme => ({
         container: {
             width: 320,
-            // minWidth: 200, 
-            // maxWidth: 400, 
             height: 100,
             whiteSpace: 'normal',
             overflow: 'overflow-wrap',
 
             padding: theme.spacing(2),
             margin: 0,
-            // alignItems: "center",
             borderRadius: 20,
             backgroundColor: backGroundColor(paletteIndex % backgroundColors.length, theme),
         },

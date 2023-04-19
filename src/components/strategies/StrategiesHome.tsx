@@ -19,6 +19,7 @@ const useStyle = makeStyles( theme => ({
         paddingTop: theme.spacing(2),
         maxWidth: 1200,
         margin: 'auto',
+        paddingBottom: 40,
     },
 
     playground: {
@@ -83,14 +84,19 @@ export const StrategiesHome = () => {
 
             <Divider variant="middle" style={{marginTop: 20, marginBottom: 0}}/>
 
+            <Box mx={2} mt={2}>
+                <Typography variant="h3"> Strategies </Typography>  
+            </Box>
+
             <Box my={3} px={2}>
-                <Typography>Strategies are set of rules, encoded into smart contracts, that can trade the assets held into HashStrat pools.</Typography>
-                <Typography>Pools are smart contracts holding a risk asset (WBTC or WETH) and a stable asset (USDC) and are configured with a strategy to trade between them.</Typography>
+                <Typography>Strategies are set of rules, encoded into smart contracts, that can trade the assets held into HashStrat Pools.</Typography>
+                <Typography>Pools are smart contracts holding variable amounts of a risk asset (WBTC or WETH) and a stable asset (USDC).</Typography>
+                <Typography>Pools are configured with a Strategy to trade between them.</Typography>
             </Box>
 
             <Box>
 
-                <Accordion defaultExpanded={ strategy === 'Rebalancing' }>
+                <Accordion defaultExpanded={ strategy === 'Rebalancing' } style={{marginTop: 20}}>
                     <AccordionSummary expandIcon={<ExpandMore />} aria-controls="panel1bh-content" >
                         <RebalancingSummary />
                     </AccordionSummary>
@@ -112,7 +118,7 @@ export const StrategiesHome = () => {
                     </AccordionDetails>
                 </Accordion>
  
-                <Accordion defaultExpanded={ strategy === 'MeanReversion' }>
+                <Accordion defaultExpanded={ strategy === 'MeanReversion' } style={{marginTop: 20}}>
                     <AccordionSummary expandIcon={<ExpandMore />} aria-controls="panel1bh-content" >
                        <MeanReversionSummary />
 
@@ -135,7 +141,7 @@ export const StrategiesHome = () => {
                     </AccordionDetails>
                 </Accordion>
                 
-                <Accordion defaultExpanded={ strategy === 'TrendFollowing' }>
+                <Accordion defaultExpanded={ strategy === 'TrendFollowing' } style={{marginTop: 20}}>
                     <AccordionSummary expandIcon={<ExpandMore />} aria-controls="panel1bh-content" >
                         <TrendFollowingSummary />
                     </AccordionSummary>

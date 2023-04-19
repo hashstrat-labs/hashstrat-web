@@ -13,13 +13,14 @@ export const RebalancingSummary = () => {
             <Typography variant="h5">
                 <strong> Rebalancing </strong>
             </Typography>
-            <Typography>
+
+            <Typography style={{marginTop: 10}}>
                 A strategy to automatically rebalance a 2 asset portfolio using a 60/40% rebalancing target and a 10% rebalancing band
             </Typography>
             
             <div style={{marginTop: 10}}>
-                <Link href="https://medium.com/@hashstrat/hashstrat-rebalancing-strategy-f0bb6cf3152f" target="_blank" > Learn More <Launch style={{ height: 15, transform: "translateY(2px)" }} />  </Link>
-                &nbsp;&nbsp;&nbsp;&nbsp;
+                <Link component={RouterLink} to={`/sim?strategy=Rebalancing&from=2019-01-01`} style={{ paddingRight: 20 }} >Strategy Simulator</Link>
+                <Link href="https://medium.com/@hashstrat/hashstrat-rebalancing-strategy-f0bb6cf3152f" target="_blank" style={{ paddingRight: 20 }} > Learn More <Launch style={{ height: 15, transform: "translateY(2px)" }} />  </Link>
                 <Link href="https://github.com/hashstrat-labs/hashstrat-pool/blob/master/contracts/strategies/RebalancingStrategyV1.sol">GitHub <Launch style={{ height: 15, transform: "translateY(2px)" }} /> </Link>
             </div>
 

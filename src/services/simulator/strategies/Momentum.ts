@@ -475,11 +475,7 @@ export class Momentum implements Strategy {
             return `${amountInt}`
         }
 
-        console.log(">>> amount: ", amount, "decimals", decimals)
-        const aaa = round( amount * 10 ** 6, 0) 
-        console.log(">>> aaa: ", aaa)
-
-        const priceInt = BigNumber.from( aaa.toString() )
+        const priceInt = BigNumber.from( round( amount * 10 ** 6, 0).toString() )
         const price = BigNumber.from(10).pow(decimals - 6).mul( priceInt )
         return price.toString()
     }

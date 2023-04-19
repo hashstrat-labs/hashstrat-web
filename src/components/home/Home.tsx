@@ -25,6 +25,8 @@ import diyInvesting from "./img/diy-investing.png"
 
 
 import productPreview from "./img/product-preview.jpg"
+import productPreviewSmall from "./img/product-preview-mobile.jpg"
+
 import portfolio01 from "./img/portfolio_01.png"
 import portfolio02 from "./img/portfolio_02.png"
 import portfolio03 from "./img/portfolio_03.png"
@@ -77,22 +79,20 @@ const useStyle = makeStyles(theme => ({
 
 
     title: {
-        margin: 0,
+     
+        maxWidth: 1300,
+  
         fontFamily: "Manrope",
-        fontWeight: 800,
-        color:  theme.palette.type === 'light' ? theme.palette.grey[800] : theme.palette.text.primary,
+        fontSize: "4.8rem",
+        fontWeight: 600,
+        color: theme.palette.type === 'light' ? theme.palette.grey[800] : theme.palette.text.primary,
         
-
         background: theme.palette.type === 'light' ?  "-webkit-linear-gradient(66deg, #095703, #AE3FAE 80%)" : "-webkit-linear-gradient(66deg, #76D90B, #F467F4 80%)",
         '-webkit-background-clip': "text",
         '-webkit-text-fill-color': "transparent",
 
-        [theme.breakpoints.down('xl')]: {
-            fontSize: "4.8rem",
-            maxWidth: 1300,
-            marginRight: 200,
-            marginBottom: 50,
-        },
+        margin: 0,
+        marginBottom: 50,
 
         [theme.breakpoints.down('lg')]: {
             fontSize: "3.5rem",
@@ -106,28 +106,32 @@ const useStyle = makeStyles(theme => ({
         [theme.breakpoints.down('sm')]: {
             fontSize: "2.7rem",
             textAlign: 'center',
-            marginRight: 0
+            marginRight: 0,
+            paddingLeft: 5,
+            paddingRight: 5,
         },
     },
 
     subtitle: {
         fontFamily: "Manrope",
-        fontSize: "1.5rem",
+        fontSize: "1.3rem",
         color: theme.palette.text.primary,
         paddingBottom: 20,
+        fontWeight: 400,
 
-        [theme.breakpoints.down('xl')]: {
-            fontSize: "1.8rem",
-            fontWeight: 400,
-        },
         [theme.breakpoints.down('lg')]: {
             paddingBottom: 10,
-            fontSize: "1.3rem",
+            fontSize: "1.1rem",
+        },
+        [theme.breakpoints.down('md')]: {
+            maxWidth: 580,
+        },
+        [theme.breakpoints.down('sm')]: {
+            maxWidth: '100%',
         },
         [theme.breakpoints.down('xs')]: {
             paddingBottom: 0,
-            fontSize: "1.2rem",
-            textAlign: 'left'
+            textAlign: 'left',
         },
     },
 
@@ -143,7 +147,7 @@ const useStyle = makeStyles(theme => ({
 
         [theme.breakpoints.down('sm')]: {
             marginTop: 0,
-            marginBottom: 40,
+            marginBottom: 80,
             margin: "auto",
             justifyContent: "center",
         },
@@ -151,46 +155,72 @@ const useStyle = makeStyles(theme => ({
 
 
     infoSection: {
-        paddingTop: 0,
+        marginTop: 0,
         marginLeft: 50,
-        border: `10px solid #EBEBEB`,
-        borderRadius: 20,
-        boxShadow: "0 1px 27px 0 rgba(0,0,0,0.19)",
+        paddingTop: 0,
         paddingBottom: 0,
+  
+        border: theme.palette.type === 'light' ? `14px solid #fff`: `14px solid #ddd`,
+        borderRadius: 20,
+
+        boxShadow: "0 1px 27px 0 rgba(0,0,0,0.19)",
+   
         maxWidth: 600,
-        maxHeight: 700,
+        maxHeight: 490,
 
         [theme.breakpoints.down('lg')]: {
-            maxHeight: 470
+            maxHeight: 490
         },
         [theme.breakpoints.down('md')]: {
-            maxHeight: 420,
+            maxHeight: 440,
         },
         [theme.breakpoints.down('sm')]: {
             marginLeft: 0,
+            marginBottom: 40,
         },
         [theme.breakpoints.down('xs')]: {
-            marginLeft: 0,
             maxWidth: 300,
         },
     },
 
     imageContainer: {
         overflow: "hidden",
-        filter: theme.palette.type === 'light' ? "brightness(1)" : "grayscale(0.3)",
-        borderRadius: 20,
-
+        filter: theme.palette.type === 'light' ? "brightness(1.0)" : "invert(0.9)",
+        borderRadius: 10,
+        maxHeight: 480,
+       
+        [theme.breakpoints.down('lg')]: {
+            maxHeight: 480,
+        },
+        [theme.breakpoints.down('md')]: {
+            maxWidth: 360,
+        },
+        [theme.breakpoints.down('sm')]: {
+            maxWidth: "100%",
+        },
+        [theme.breakpoints.down('xs')]: {
+            maxWidth: "100%",
+        },
     },
 
     productImage: {
         content: `url( ${productPreview} )`,
-        maxHeight: 680,
+        // maxWidth: 900,
+        // maxHeight: 716,
        
+        maxHeight: 470,
+        
         [theme.breakpoints.down('lg')]: {
-            maxHeight: 450
+            maxHeight: 462,
         },
         [theme.breakpoints.down('md')]: {
-            maxHeight: 400
+            maxHeight: 420
+        },
+        [theme.breakpoints.down('sm')]: {
+        },
+
+        [theme.breakpoints.down('xs')]: {
+            content: `url( ${productPreviewSmall} )`,
         },
     },
 
@@ -222,8 +252,10 @@ const useStyle = makeStyles(theme => ({
     },
 
     problemsItems: {
-        // maxWidth: 1100,
-        paddingTop: 20,
+        maxWidth: 1600,
+        margin: "auto",
+  
+        paddingTop: 50,
         paddingLeft: 30,
         paddingRight: 30,
 
@@ -298,13 +330,14 @@ const useStyle = makeStyles(theme => ({
     },
 
     strategiesSection: {
-        // maxWidth: 1024,
-        // margin: "auto",
-        marginTop: 30,
-        paddingTop: 0,
+
+        backgroundColor: theme.palette.type === 'light' ? '#FAFAFA' : '#111',
+        marginTop: 0,
+  
+        paddingTop: 40,
         paddingLeft: 60,
         paddingRight: 60,
-        paddingBottom: 0,
+        paddingBottom: 60,
         borderRadius: 20,
 
         [theme.breakpoints.down('sm')]: {
@@ -476,13 +509,13 @@ export const Home = () => {
                     <Typography variant="body2" align="center" color="error" style={{textTransform: "uppercase", fontWeight: 600 }}>The Problem</Typography>
                 </Box>
 
-                <Box pb={2}>
-                    <Typography variant="h3" align="center"> Too many people loose money in crypto.</Typography>
+                <Box pb={3}>
+                    <Typography variant="h3" align="center"> Too many people loose <br/> money in crypto.</Typography>
                 </Box>
 
-                <Box pb={4}>
+                <Box pb={6}>
                     <Typography variant="body1" align="center">
-                        CeFi, DeFi, DIY investing are full of pitfalls for new and seasoned investors.
+                        DIY investing, CeFi, DeFi are full of pitfalls for new and seasoned investors.
                     </Typography>
                 </Box>
 
@@ -559,15 +592,14 @@ export const Home = () => {
                 <Box className={classes.problemsItems} >
                    
                      <InfoPanel 
-                        subject="Do-it-yourself investors"
+                        subject="Do-it-yourself investing"
                         title="“FOMO in and get REKT”" 
                         image={diyInvesting} 
                         url="https://medium.com/@hashstrat/why-hashstrat-bb850155e5cb"
                     >
                         <Box mt={3}>
                             <Typography align="left" variant="body1" >
-                                Inexperienced investors come with expectation of easy profits 
-                                but YOLO in at the wrong time and panic-sell, due to the market extreme volatility.
+                                Too many new investors come with the expectation of quick gains, YOLO in at the wrong time and panic-sell due to the market extreme volatility.
                             </Typography>
                         </Box>
                     </InfoPanel>
@@ -580,8 +612,7 @@ export const Home = () => {
                     >
                         <Box mt={3}>
                             <Typography align="left" variant="body1" >
-                                Incompetence and mismanagement including rehypothecation of investors' funds,
-                                appalling risk management, lack of integrity and fraud.
+                                Centralized platforms often pay back users' trust with incompetence, mismanagement, rehypothecation of investors' funds, lack of integrity and fraud.
                             </Typography>
                         </Box>
                     </InfoPanel>
@@ -595,7 +626,7 @@ export const Home = () => {
 
                         <Box mt={3}>
                             <Typography align="left" variant="body1" >
-                                Legit protocols only offer minimal returns.
+                                Legit protocols can only offer low single digit returns.
                                 Scams entice you with impossible gains, but “when you don't know where the API comes from, you are the APY”.
                             </Typography>
                         </Box>
@@ -603,7 +634,7 @@ export const Home = () => {
 
                 </Box>
 
-                <Box pt={3}>
+                <Box pt={4}>
                     <Typography align="center" variant="h6">
                         But what if you had the tools to grow your wealth, for real, while staying in control?
                     </Typography>
@@ -624,7 +655,7 @@ export const Home = () => {
                         </Typography>
                         <Box mt={2}>
                             <Typography variant="body1" align="center">
-                                The first DeFi protocol that simplifies the management of your crypto investments. 
+                                The first DeFi protocol that simplifies <br/> the management of your crypto investments. 
                             </Typography>
                         </Box>
                     </Box>
@@ -632,44 +663,44 @@ export const Home = () => {
                     <Box>
                         <ProductPreview emoji="❤️" title="Hold only the best assets" layout="layout1" image={product01}>
                             <Box pb={2}>
-                                <span style={{fontSize: '130%'}}>Your gains come from the appreciation of the best crypto assets over the long term. Not yield farming, lending or shitcoin trading. </span>
+                                <span style={{ fontSize: 24, fontWeight: 400 }}>Your gains come from the appreciation of the best crypto assets. Not yield farming, lending or shitcoin trading. </span>
                             </Box>
                             <Box py={2}>
-                                <span style={{fontSize: '130%'}}>No need to over-diversify. BTC and ETH are the “index” over the whole crypto and web3 markets.</span>
+                                <span style={{ fontSize: 20 }}>BTC and ETH are the “index” over the whole crypto and web3 markets. USDC dampens volatility in your portfolio.</span>
                             </Box>
                             <Box py={2}>
-                                <span style={{fontSize: '130%'}}>Stay in control. Always.</span>
+                                <span style={{ fontSize: 20 }}>Stay in control. Always.</span>
                             </Box>
                         </ProductPreview>
 
                         <ProductPreview emoji="🤖" title="Automate your portfolio management"  layout="layout2" image={product02}>
                             <Box pb={2}>
-                                <span style={{fontSize: '130%'}}>Diversify your portfolio management strategies to improve the performance of your portfolio in various market conditions.</span>
+                                <span style={{ fontSize: 24, fontWeight: 400 }}>Diversify your portfolio management strategies for different market conditions.</span>
                             </Box>
                             <Box py={2}>
-                                <span style={{fontSize: '130%'}}>Automate your buys and sells to ensure appropriate exposure and risk management in your portfolio.</span>
+                                <span style={{ fontSize: 20 }}>Automate your buys and sells to ensure appropriate exposure and risk management in your portfolio.</span>
                             </Box>
                             <Box py={2}>
-                                <span style={{fontSize: '130%'}}>Don't be the guy buying the top and selling the bottom.</span>
+                                <span style={{ fontSize: 20 }}>Don't be the guy buying the top and selling the bottom.</span>
                             </Box>
                         </ProductPreview>
 
                         <ProductPreview emoji="😌" title="Find peace of mind" layout="layout1" image={product03}>
                             <Box pb={2}>
-                                <span style={{fontSize: '130%'}}>Avoid the stress due to the extreme sentiment and volatility in the crypto markets.</span>
+                                <span style={{ fontSize: 24, fontWeight: 400 }}>Avoid the stress of the extreme sentiment and volatility in the crypto markets.</span>
                             </Box>
                             <Box py={2}>
-                                <span style={{fontSize: '130%'}}>Let your portfolio management strategies do the hard work and keep your investments in check.</span>
+                                <span style={{ fontSize: 20 }}>Let your portfolio management strategies do the hard work and keep your investments in check.</span>
                             </Box>
                             <Box py={2}>
-                                <span style={{fontSize: '130%'}}>Stay humble. Stay safe.</span>
+                                <span style={{ fontSize: 20 }}>Stay humble. Stay safe.</span>
                             </Box>
                         </ProductPreview>
                     </Box>
                 </Box>
             </section>
 
-            <Divider style={{ marginTop: 40, marginBottom: 60 }} />
+            <Divider style={{ marginTop: 0, marginBottom: 40 }} />
 
             <section className={classes.sectionWrapper}>
                 <Box className={classes.buildPortfolioSection}>
@@ -696,9 +727,10 @@ export const Home = () => {
                 </Box>
             </section>
 
-            <Divider style={{ marginTop: 50, marginBottom: 60 }} />
+            <Divider style={{ marginTop: 60, marginBottom: 0 }} />
 
             <section className={classes.sectionWrapper}>
+          
                 <Box className={classes.strategiesSection}>
 
                     <Box pb={2}>
@@ -719,7 +751,7 @@ export const Home = () => {
                 </Box>
             </section>
 
-            <Divider style={{ marginTop: 60, marginBottom: 60 }} />
+            <Divider style={{ marginTop: 0, marginBottom: 40 }} />
 
             <section className={classes.sectionWrapper}>
                 <Box className={classes.valuesSection}>
@@ -779,7 +811,7 @@ export const Home = () => {
                 </Box>
             </section>
 
-            <Divider style={{ marginTop: 60, marginBottom: 60 }} />
+            <Divider style={{ marginTop: 60, marginBottom: 40 }} />
 
             <section className={classes.sectionWrapper}  > 
                 <Box className={classes.faqSection}>

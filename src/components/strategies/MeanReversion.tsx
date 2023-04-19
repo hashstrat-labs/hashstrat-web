@@ -13,13 +13,14 @@ export const MeanReversionSummary = () => {
             <Typography variant="h5">
                 <strong> Mean Reversion</strong>
             </Typography>
-            <Typography>
+
+            <Typography style={{marginTop: 10}}>
                 A strategy for dollar-cost averaging in and out a risk asset when its price diverges substantially from its long term trend
             </Typography>
 
             <div style={{marginTop: 10}}>
-                <Link href="https://medium.com/@hashstrat/hashstrat-mean-reversion-strategy-b1a576b05d5f" target="_blank" > Learn More <Launch style={{ height: 15, transform: "translateY(2px)" }} />  </Link>
-                &nbsp;&nbsp;&nbsp;&nbsp;
+                <Link component={RouterLink} to={`/sim?strategy=MeanReversion&from=2019-01-01`} style={{ paddingRight: 20 }} >Strategy Simulator</Link>
+                <Link href="https://medium.com/@hashstrat/hashstrat-mean-reversion-strategy-b1a576b05d5f" target="_blank" style={{ paddingRight: 20 }}> Learn More <Launch style={{ height: 15, transform: "translateY(2px)" }} />  </Link>
                 <Link href="https://github.com/hashstrat-labs/hashstrat-pool/blob/master/contracts/strategies/MeanReversionV1.sol"> GitHub <Launch style={{ height: 15, transform: "translateY(2px)" }} /> </Link>
             </div>
 

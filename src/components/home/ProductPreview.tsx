@@ -133,7 +133,6 @@ export const ProductPreview = ({ children, title, image, emoji, layout = "layout
     }))
 
 
-
     const classes = layout === "layout1" ? layout1() : layout2()
 
     return (
@@ -146,7 +145,7 @@ export const ProductPreview = ({ children, title, image, emoji, layout = "layout
             }
             <Box className={classes.contentWrapper}>
                 <Box pt={2} pb={2}>
-                    <Typography variant="h5" color="primary"> {emoji} {title} </Typography>
+                    <Typography variant="body1" color="primary"> {emoji} {title} </Typography>
                 </Box>
 
                 <Box pb={2}>
@@ -155,16 +154,14 @@ export const ProductPreview = ({ children, title, image, emoji, layout = "layout
 
                 <Box className={classes.buttonWrapper}>
                     <Link component={LinkRouter} to="https://app.hashstrat.com" style={{ textDecoration: 'none' }} >
-                        <ButtonSecondary variant="outlined" color="primary" >Launch App</ButtonSecondary>
+                        <ButtonSecondary style={{ minWidth: 210 }} variant="outlined" color="primary" >Launch App</ButtonSecondary>
                     </Link>
                 </Box>
             </Box>
 
             { image && layout === "layout1" &&
                 <Box className={classes.imageWrapper}>
-                    {/* <div style={{textAlign: "center", alignItems: "center"}}> */}
-                        <img src={image} className={classes.image} alt="" /> 
-                    {/* </div> */}
+                    <img src={image} className={classes.image} alt="" /> 
                 </Box>
             }
         </div>

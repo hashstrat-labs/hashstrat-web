@@ -17,10 +17,11 @@ const useStyle = makeStyles( theme => ({
  
     container: {
         marginTop: 2,
-        paddingLeft: 20,
-        paddingRight: 20,
+        paddingLeft: 10,
+        paddingRight: 10,
         width: '100%',
         margin: "auto",
+
         [theme.breakpoints.down('xs')]: {
             paddingLeft: 0,
             paddingRight: 0,
@@ -157,13 +158,13 @@ export const StrategyPlayground = ({ chainId, strategy, from, to, symbol, chartH
 
 
     return (
-        <Box>
-            <Box py={1}>
-             <Typography variant='h6'>Performance</Typography>
+        <Box className={classes.container}>
+            <Box p={1}>
+                <Typography variant='h6'>Performance</Typography>
             </Box>
 
             <Box>
-                <Box className={classes.container} >
+                <Box  >
                     <TabContext value={selectedTokenIndex.toString()}>
                         <TabList onChange={handleChange} >
                             <Tab label="ROI" value="0" key={0} />

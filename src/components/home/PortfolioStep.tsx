@@ -1,6 +1,5 @@
 
-import { makeStyles, Box, Typography } from "@material-ui/core"
-import { Horizontal } from "../Layout"
+import { makeStyles, Box } from "@material-ui/core"
 
 interface PortfolioStepProps {
     image?: string,
@@ -74,12 +73,10 @@ export const PortfolioStep = ({ step, title, image } : PortfolioStepProps ) => {
         <div className={classes.container}>
 
             <Box className={classes.imageWrapper}>
-                {/* <div style={{margin: 'auto'}}> */}
                     <img src={image} className={classes.image} alt="" />
-                {/* </div> */}
             </Box>
 
-            <Box style={{backgroundColor: '#FAFAFA', borderRadius: "0px 0px 20px 20px"}} >
+            <Box style={{ backgroundColor: '#FAFAFA', borderRadius: "0px 0px 20px 20px" }} >
                 <Box py={1}>
                     <Box className={classes.stepWrapper}>
                         <Box className={classes.step}>

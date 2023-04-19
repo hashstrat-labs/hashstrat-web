@@ -9,33 +9,46 @@ import { Link as RouterLink } from "react-router-dom"
 
 const useStyles = makeStyles( theme => ({
     container: {
-        fontSize: 18,
+        fontSize: 16,
 
         [theme.breakpoints.down('sm')]: {
             padding: 0,
             margin: 0,
         },
+
     },
 
     title: {
         fontSize: 24, 
-        fontWeight: 400,
+        fontWeight: 500,
+        marginTop: 10,
+        marginBottom: 10,
 
         [theme.breakpoints.down('sm')]: {
             fontSize: 22,
             fontWeight: 400,
+
+            marginLeft: 0,
+            marginRight: 0,
         },
     }, 
+
+    accordionSummary: {
+        paddingLeft: 0,
+        paddingRight: 0,
+    },
 
     accordion: {
         backgroundColor: 'rgba(1,1,1,0)', 
         borderBottom: `1px solid ${ theme.palette.type === 'light' ? 'rgba(0.6,0.6,0.6,0)': 'rgba(0.8,0.8,0.8,0)'} `, 
         boxShadow: "0 0px 0px 0 rgba(0,0,0,0)",
-        margin: 0,
-        padding: 0
+        padding: 0,
 
+        // marginTop: 20,
+        // marginBottom: 20,
+        marginLeft: 0,
+        marginRight: 0,
     },
-
 
 }))
 
@@ -49,10 +62,10 @@ export const FaqContent = () => {
 
             <Accordion defaultExpanded className={classes.accordion}>
 
-                <AccordionSummary expandIcon={<ExpandMore color="primary" />} aria-controls="panel1bh-content" >
+                <AccordionSummary className={classes.accordionSummary} expandIcon={<ExpandMore style={{ color: '#656565' }} />} aria-controls="panel1bh-content" >
                     <Typography className={classes.title} > What is HashStrat?  </Typography>
                 </AccordionSummary>
-                <AccordionDetails>
+                <AccordionDetails style={{ fontSize: 16 }}>
                     <ul style={{  paddingLeft: 20, marginTop: 0 }} >
                         <li style={{ marginBottom: 10 }} >
                             HashStrat is a new DeFi protocol that helps investors in digital assets achieve financial success.
@@ -77,14 +90,14 @@ export const FaqContent = () => {
             </Accordion>
 
             <Accordion className={classes.accordion}>
-                <AccordionSummary expandIcon={<ExpandMore color="primary" />} aria-controls="panel1bh-content" >
+                <AccordionSummary className={classes.accordionSummary} expandIcon={<ExpandMore style={{ color: '#656565' }} />} aria-controls="panel1bh-content" >
                     <Typography className={classes.title} > Why use HashStrat?</Typography>
                 </AccordionSummary>
-                <AccordionDetails  >
+                <AccordionDetails style={{ fontSize: 16 }} >
                     <Box>
-                        HashStrat can help you to be a more successful, long-term investor:
+                        HashStrat can help you to be a more successful long-term investor.
                         <ul style={{ paddingLeft: 20}} >
-                            <li style={{ marginBottom: 10 }} >Automated portfolio management prevents FOMO-buying and panic-selling your investments at the wrong time. </li>
+                            <li style={{ marginBottom: 10 }} >Automating the management of your portfolio prevents FOMO-buying and panic-selling your investments at the wrong time. </li>
                             <li style={{ marginBottom: 10 }} >HashStrat strategies, with their built-in risk management, help to lock-in gains when price &amp; sentiment is high and scaling in your investments when price &amp; sentiment is low.</li>
                             <li style={{ marginBottom: 10 }} >Our strategies can dramatically reduce volatility &amp; drawdowns of your portfolio, whilst aiming for returns competitive with a simple holding strategy.</li>
                             <li style={{ marginBottom: 10 }} >HashStrat will make it easier for you to stay invested for longer and reap greater rewards over time.</li>
@@ -107,10 +120,10 @@ export const FaqContent = () => {
 
 
             <Accordion className={classes.accordion}>
-                <AccordionSummary expandIcon={<ExpandMore color="primary" />} aria-controls="panel1bh-content" >
+                <AccordionSummary className={classes.accordionSummary} expandIcon={<ExpandMore style={{ color: '#656565' }} />} aria-controls="panel1bh-content" >
                     <Typography className={classes.title} > What are HashStrat Strategies exactly? </Typography>
                 </AccordionSummary>
-                <AccordionDetails >
+                <AccordionDetails style={{ fontSize: 16 }} >
                         <ul style={{ paddingLeft: 20, marginTop: 0 }} >
                             <li style={{ marginBottom: 10 }} > Strategies are set of rules, encoded into smart contracts, designed to manage the assets held in your digital asset portfolio.</li>
                             <li style={{ marginBottom: 10 }} > Strategies decide when to allocate capital to risk assets (e.g. BTC, ETH) and when to trade back into a stable asset (USDC).</li>
@@ -122,10 +135,10 @@ export const FaqContent = () => {
 
 
             <Accordion className={classes.accordion}>
-                <AccordionSummary expandIcon={<ExpandMore color="primary" />} aria-controls="panel1bh-content" >
+                <AccordionSummary className={classes.accordionSummary} expandIcon={<ExpandMore style={{ color: '#656565' }} />} aria-controls="panel1bh-content" >
                     <Typography className={classes.title} > Who is it for? </Typography>
                 </AccordionSummary>
-                <AccordionDetails >
+                <AccordionDetails style={{ fontSize: 16 }} >
                         <ul style={{  paddingLeft: 20, marginTop: 0 }} >
                             <li style={{ marginBottom: 10 }} > <strong>Individual investors</strong> who want to automate the management of their crypto-portfolios, improve returns and reduce volatility, whilst retaining control over their digital assets.</li>
                             <li style={{ marginBottom: 10 }} > <strong>DAO treasury managers</strong> who want to protect the value of their stablecoin holdings from FIAT currency debasement by getting some exposure to pristine crypto assets in a 100% trustless and verifiable way.</li>
@@ -136,11 +149,11 @@ export const FaqContent = () => {
 
 
             <Accordion className={classes.accordion}>
-                <AccordionSummary expandIcon={<ExpandMore color="primary" />} aria-controls="panel1bh-content" >
+                <AccordionSummary className={classes.accordionSummary} expandIcon={<ExpandMore style={{ color: '#656565' }} />} aria-controls="panel1bh-content" >
                     <Typography className={classes.title} > How do you use HashStrat? </Typography>
                 </AccordionSummary>
                
-                <AccordionDetails >
+                <AccordionDetails style={{ fontSize: 16 }} >
                     <Box>
                         Using HashStat is as simple as:
                         <ol >
@@ -169,10 +182,10 @@ export const FaqContent = () => {
             </Accordion>
 
             <Accordion className={classes.accordion}>
-                <AccordionSummary expandIcon={<ExpandMore color="primary" />} aria-controls="panel1bh-content" >
+                <AccordionSummary className={classes.accordionSummary} expandIcon={<ExpandMore style={{ color: '#656565' }} />} aria-controls="panel1bh-content" >
                     <Typography className={classes.title} > What is the HashStrat DAO?</Typography>
                 </AccordionSummary>
-                <AccordionDetails >
+                <AccordionDetails style={{ fontSize: 16 }} >
                         <ul style={{ paddingLeft: 20, marginTop: 0 }} >
                             <li style={{ marginBottom: 10 }} >The HashStrat protocol is governed by a Decentralized Autonomous Organization, the HashStrat DAO.</li>
                             <li style={{ marginBottom: 10 }} >Users of the protocol can earn the DAO token <Link component={RouterLink} to="/dao">HST</Link> and become members of the DAO.</li>
@@ -182,23 +195,23 @@ export const FaqContent = () => {
             </Accordion>
 
             <Accordion className={classes.accordion}>
-                <AccordionSummary expandIcon={<ExpandMore color="primary" />} aria-controls="panel1bh-content" >
+                <AccordionSummary className={classes.accordionSummary} expandIcon={<ExpandMore style={{ color: '#656565' }} />} aria-controls="panel1bh-content" >
                     <Typography className={classes.title} > What's the DAO business model?</Typography>
                 </AccordionSummary>
-                <AccordionDetails >
+                <AccordionDetails style={{ fontSize: 16 }} >
                         <ul style={{  paddingLeft: 20, marginTop: 0 }} >
-                            <li style={{ marginBottom: 10 }} > The protocol generates its revenues by taxing profits withdrawn from Pools &amp; Indexes. </li>
-                            <li style={{ marginBottom: 10 }} > The withdrawal fee is currently set to 1% of profits. </li>
-                            <li style={{ marginBottom: 10 }} > These fees are periodically collected into the DAO Treasury and re-distributed to DAO token holders as "dividends" </li>
+                            <li style={{ marginBottom: 10 }} > The protocol generates its revenues by "taxing" profits withdrawn by users.</li>
+                            <li style={{ marginBottom: 10 }} > Withdrawal fee is currently set to 1% of profits. </li>
+                            <li style={{ marginBottom: 10 }} > Protocol fees are periodically collected into the DAO Treasury and re-distributed to DAO token holders as "dividends".</li>
                         </ul>
                 </AccordionDetails>
             </Accordion>
 
             <Accordion className={classes.accordion}>
-                <AccordionSummary expandIcon={<ExpandMore color="primary" />} aria-controls="panel1bh-content" >
+                <AccordionSummary className={classes.accordionSummary} expandIcon={<ExpandMore style={{ color: '#656565' }} />} aria-controls="panel1bh-content" >
                     <Typography className={classes.title} > This is cool but what are the risks?</Typography>
                 </AccordionSummary>
-                <AccordionDetails >
+                <AccordionDetails style={{ fontSize: 16 }}>
                     <Box>
                         Decentralized Finance is a nascent industry and it's important to be aware of its risks.<br/>
                         These are the main risks that is worth considering when using a DeFi protocol like HashStrat: 
