@@ -243,12 +243,23 @@ const useStyle = makeStyles(theme => ({
     },
 
     problemsSection: {
-        margin: "auto",
+
         paddingTop: 40,
-        paddingLeft: 5,
-        paddingRight: 5,
+        margin: "auto",
+        paddingLeft: 60,
+        paddingRight: 60,
+
         paddingBottom: 40,
         backgroundColor: theme.palette.type === 'light' ? '#FAFAFA' : '#111',
+
+        [theme.breakpoints.down('sm')]: {
+            paddingLeft: 20,
+            paddingRight: 20,
+        },
+        [theme.breakpoints.down('xs')]: {
+            paddingLeft: 10,
+            paddingRight: 10,
+        },
     },
 
     problemsItems: {
@@ -314,32 +325,34 @@ const useStyle = makeStyles(theme => ({
     },
 
     buildPortfolioItems: {
-        // backgroundColor: 'orange',
         display: "grid",
         gridTemplateColumns: "1fr 1fr 1fr",
-        gap: theme.spacing(2),
+        columnGap: 20,
+        rowGap: 0,
         justifyItems: "space-between",
         justifyContent: "space-between",
 
         [theme.breakpoints.down('sm')]: {
             gridTemplateColumns: "1fr 1fr",
+
         },
         [theme.breakpoints.down('xs')]: {
             gridTemplateColumns: "1fr",
+            columnGap: 0,
+            rowGap: 20,
         },
     },
 
     strategiesSection: {
-
         backgroundColor: theme.palette.type === 'light' ? '#FAFAFA' : '#111',
         marginTop: 0,
-  
         paddingTop: 40,
         paddingLeft: 60,
         paddingRight: 60,
         paddingBottom: 60,
         borderRadius: 20,
 
+        
         [theme.breakpoints.down('sm')]: {
             paddingLeft: 20,
             paddingRight: 20,
@@ -350,6 +363,10 @@ const useStyle = makeStyles(theme => ({
         },
     },
 
+    strategiesWrapper: {
+        maxWidth: 1500, 
+        margin: "auto",
+    },
 
     valuesSection: {
         paddingLeft: 60,
@@ -365,9 +382,6 @@ const useStyle = makeStyles(theme => ({
     },
 
     valuesItems: {
-        // maxWidth: 1024,
-
-        // backgroundColor: 'red',
         display: "grid",
         gridTemplateColumns: "1fr 1fr 1fr",
         gridTemplateAreas: `
@@ -729,10 +743,8 @@ export const Home = () => {
 
             <Divider style={{ marginTop: 60, marginBottom: 0 }} />
 
-            <section className={classes.sectionWrapper}>
-          
-                <Box className={classes.strategiesSection}>
-
+            <section className={classes.strategiesSection}>
+                <Box className={classes.strategiesWrapper}>
                     <Box pb={2}>
                         <Typography variant="body2" color="primary" align="center" style={{textTransform: "uppercase", fontWeight: 600 }}>
                         How we do it
@@ -747,7 +759,6 @@ export const Home = () => {
                     </Box>
 
                     <StrategyCarousel />
-
                 </Box>
             </section>
 

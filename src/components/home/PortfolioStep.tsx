@@ -11,7 +11,6 @@ export const PortfolioStep = ({ step, title, image } : PortfolioStepProps ) => {
 
   const layout = makeStyles( theme => ({
         container: {
-            maxWidth: 430,
             display: "grid",
             gap: 0,
             gridTemplateColumns: "1fr",
@@ -20,10 +19,6 @@ export const PortfolioStep = ({ step, title, image } : PortfolioStepProps ) => {
             borderRadius: 20,
             border: "1px solid #E6E6E6",
             backgroundColor: theme.palette.type === 'light' ? '#E0E0E0' : '#E0E0E0',
-            
-            [theme.breakpoints.down('xs')]: {
-                margin: 10,
-            },
         },
         imageWrapper: {
             margin: "auto",
