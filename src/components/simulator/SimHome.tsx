@@ -30,7 +30,7 @@ const useStyle = makeStyles( theme => ({
         marginTop: 2,
         paddingLeft: 20,
         paddingRight: 20,
-        maxWidth: 2000,
+        maxWidth: 1200,
         margin: "auto",
         [theme.breakpoints.down('xs')]: {
             paddingLeft: 0,

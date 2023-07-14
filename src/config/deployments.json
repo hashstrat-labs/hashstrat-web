@@ -1,43 +1,43 @@
 {
 
     "polygon": {
-        "pool01v3a": {
-            "pool": "0x8714336322c091924495B08938E368Ec0d19Cc94",
-            "pool_lp": "0x49c3ad1bF4BeFb024607059cb851Eb793c224BaB",
-            "strategy": "0xbfB7A8caF44fD28188673B09aa3B2b00eF301118",
-            "price_feed": "0xc907E116054Ad103354f2D350FD2514433D57F6f"
-        },
-        "pool02v3a": {
-            "pool": "0xD963e4C6BE2dA88a1679A40139C5b75961cc2619",
-            "pool_lp": "0xC27E560E3D1546edeC5DD858D404EbaF2166A763",
-            "strategy": "0xc78BD1257b7fE3Eeb33fC824313C71D145C9754b",
-            "price_feed": "0xF9680D99D6C9589e2a93a78A04A279e509205945"
-        },
-        "pool03v3a": {
-            "pool": "0x63151e56140E09999983CcD8DD05927f9e8be81D",
-            "pool_lp": "0xCdf8886cEea718ad37e02e9a421Eb674F20e5ba1",
-            "strategy": "0x4687faf8e60ca8e532af3173C0225379939261F7",
-            "price_feed": "0xc907E116054Ad103354f2D350FD2514433D57F6f"
-        },
-        "pool04v3a": {
-            "pool": "0xd229428346E5Ba2F08AbAf52fE1d2C941ecB36AD",
-            "pool_lp": "0xe4FF896D756Bdd6aa1208CDf05844335aEA56297",
-            "strategy": "0xB98203780925694BAeAFDC7CB7C6ECb1E6631D17",
-            "price_feed": "0xF9680D99D6C9589e2a93a78A04A279e509205945"
-        },
-        "pool05v3a": {
-            "pool": "0xCfcF4807d10C564204DD131527Ba8fEb08e2cc9e",
-            "pool_lp": "0x80bc0b435b7e7F0Dc3E95C3dEA87c68D5Ade4378",
-            "strategy": "0xBbe4786c0D1cEda012B8EC1ad12a2F7a1A5941f1",
-            "price_feed": "0xc907E116054Ad103354f2D350FD2514433D57F6f"
-        },
-        "pool06v3a": {
-            "pool": "0xa2f3c0FDC55814E70Fdac2296d96bB04840bE132",
-            "pool_lp": "0x2523c4Ab54f5466A8b8eEBCc57D8edC0601faB54",
-            "strategy": "0x62386A92078CC4fEF921F9bb1f515464e2f7918f",
-            "price_feed": "0xF9680D99D6C9589e2a93a78A04A279e509205945"
-        },
 
+        "pool01v4a": {
+            "pool": "0x650056Eb11f9cb68427e2bf4107B9de431848059",
+            "pool_lp": "0x4c7310bfDD5D79BB62FB58E2886a6a54b227276A",
+            "strategy": "0x21c1c5262FB2A51Adefa78a4441De700F6874C21",
+            "price_feed": "0xc907E116054Ad103354f2D350FD2514433D57F6f"
+        },
+        "pool02v4a": {
+            "pool": "0x821555f905c342980539A7904c3bD436855E89b0",
+            "pool_lp": "0x452d065A0e00f268884900ea2E079f9589bf29A4",
+            "strategy": "0x0Bf7f645898eBbE27555d85C00aeb45Bd4a40Dd1",
+            "price_feed": "0xF9680D99D6C9589e2a93a78A04A279e509205945"
+        },
+        "pool03v4a": {
+            "pool": "0xa1f2B57e0f9D0804bFE4F4d40eC7c076915D98a9",
+            "pool_lp": "0x252ac8bb8e22FD6dCDcA6C6926479fDBcF0D9C0f",
+            "strategy": "0xAbA4e06B1E05D7D0b0F8B1fA8d157E487AB3697F",
+            "price_feed": "0xc907E116054Ad103354f2D350FD2514433D57F6f"
+        },
+        "pool04v4a": {
+            "pool": "0x236551ca7f59Cfa1253A22c4BdE172F4d05B2896",
+            "pool_lp": "0xE032c00b3a993EA6245c1cCf37F52E8E279BeFB1",
+            "strategy": "0xFAa9A19AFbeB0A41Ef91b3672866ba3a7718325c",
+            "price_feed": "0xF9680D99D6C9589e2a93a78A04A279e509205945"
+        },
+        "pool05v4a": {
+            "pool": "0x0cd1840Ae5297fbbA95b4E411D58aD1F07f9a02E",
+            "pool_lp": "0x12c3830Cb5e1239295daD165EEd98EB333bd74D2",
+            "strategy": "0xdc49e814E6CbF19F0b02b7A4FE96809216f13DE6",
+            "price_feed": "0xc907E116054Ad103354f2D350FD2514433D57F6f"
+        },
+        "pool06v4a": {
+            "pool": "0x06976dA5662E7E7787e86156EB0AcA5B29514499",
+            "pool_lp": "0x2878AdE2DF7653E3BF58e735B2cf1AaCa435cE49",
+            "strategy": "0x95E95d740F28aF508d51591064392CE61fcBEF9E",
+            "price_feed": "0xF9680D99D6C9589e2a93a78A04A279e509205945"
+        },
 
         "pool01v3": {
             "pool": "0xb7BB83e1c826a8945652434DCf1758B46d6A5120",
@@ -76,42 +76,6 @@
             "price_feed": "0xF9680D99D6C9589e2a93a78A04A279e509205945"
         },
       
-        "pool01": {
-            "pool": "0x7b8b3fc7563689546217cFa1cfCEC2541077170f",
-            "pool_lp": "0x2EbF538B3E0F556621cc33AB5799b8eF089b2D8C",
-            "strategy": "0x6aa3D1CB02a20cff58B402852FD5e8666f9AD4bd",
-            "price_feed": "0xc907E116054Ad103354f2D350FD2514433D57F6f"
-        },
-        "pool02": {
-            "pool": "0x62464FfFAe0120E662169922730d4e96b7A59700",
-            "pool_lp": "0x26b80F5970bC835751e2Aabf4e9Bc5B873713f17",
-            "strategy": "0xca5B24b63D929Ddd5856866BdCec17cf13bDB359",
-            "price_feed": "0xF9680D99D6C9589e2a93a78A04A279e509205945"
-        },
-        "pool03": {
-            "pool": "0xc60CE76892138d9E0cE722eB552C5d8DE70375a5",
-            "pool_lp": "0xe62A17b61e4E309c491F1BD26bA7BfE9e463610e",
-            "strategy": "0x46cfDDc7ab8348b44b4a0447F0e5077188c4ff14",
-            "price_feed": "0xc907E116054Ad103354f2D350FD2514433D57F6f"
-        },
-        "pool04": {
-            "pool": "0x82314313829B7AF502f9D60a4f215F6b6aFbBE4B",
-            "pool_lp": "0xA9085698662029Ef6C21Bbb23a81d3eB55898926",
-            "strategy": "0x02CF4916Dd9f4bB329AbE5e043569E586fE006E4",
-            "price_feed": "0xF9680D99D6C9589e2a93a78A04A279e509205945"
-        },
-        "pool05": {
-            "pool": "0x742953942d6A3B005e28a451a0D613337D7767b2",
-            "pool_lp": "0x7EB471C4033dd8c25881e9c02ddCE0C382AE8Adb",
-            "strategy": "0x7F7a40fa461931f3aecD183f8B56b2782483B04B",
-            "price_feed": "0xc907E116054Ad103354f2D350FD2514433D57F6f"
-        },
-        "pool06": {
-            "pool": "0x949e118A42D15Aa09d9875AcD22B87BB0E92EB40",
-            "pool_lp": "0x74243293f6642294d3cc94a9C633Ae943d557Cd3",
-            "strategy": "0x26311040c72f08EF1440B784117eb96EA20A2412",
-            "price_feed": "0xF9680D99D6C9589e2a93a78A04A279e509205945"
-        },
 
         "usdc": "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174",
         "dai": "",
@@ -126,30 +90,29 @@
         "dao_operations": "0x7d49433360930dDed0B118fA0C9cAF9a38D18155",
         
         "indexes": {
-            "index01v3a": {
-                "pool": "0xE61bA2eF1057dD90aAF9f021Fdf24F6B57D902AF",
-                "pool_lp": "0x0560Dd521787e27126B93E98568002A3ef84E36c"
+            "index01v4": {
+                "pool": "0x6799B9006199f1450c726769fbe2f9e1847045ed",
+                "pool_lp": "0xF94cf0Ef63a3E61e93e19a1dB74A7ACB8a2E104D"
             },
-            "index02v3a": {
-                "pool": "0x1FB4fa664648a458c81A6fFDC7b3c7120CEb4E45",
-                "pool_lp": "0x8A8dD5a0d50887D16303460ee00CB311D255b034"
+            "index02v4": {
+                "pool": "0x399141cE39E5C4fb528cBBa4a0B59929ce32CDd4",
+                "pool_lp": "0x196Ffa4e24B522726C6C59fb1D4c9F9e218f08C0"
             },
-            "index03v3a": {
-                "pool": "0xe0B5AfF7821bbABd48429D2B956A1202e3BA9b42",
-                "pool_lp": "0x9D91628be9BA8B024644fF612d013956C7ADa928"
+            "index03v4": {
+                "pool": "0xF5948A8fc6F3FB15b7E302ec7c785fD2bB6ceda6",
+                "pool_lp": "0xa88C0b6D9eD65A19910ce20D8277a802f373bCe1"
             },
-
-            "index04v3a": {
-                "pool": "0x87324A1beeA3B49013C95541036b0e5b5d0aBF15",
-                "pool_lp": "0xE07cCF71Dc5726A608C60e7cc213854d29592938"
+            "index04v4": {
+                "pool": "0x18FA614930277c75Ba5AAF60e4860E7340CD74F7",
+                "pool_lp": "0x72f582a5a1835358116bBB492b9CDF0790d817D6"
             },
-            "index05v3a": {
-                "pool": "0x7F29b0439015f12a001a0608Db92e84c63b7989f",
-                "pool_lp": "0xDd00b39AeCc0109f6C023696cec1112eA36d7CB6"
+            "index05v4": {
+                "pool": "0x939583a4b35671e86532BbD6230236dB15A5330e",
+                "pool_lp": "0x4008D357a817E9d852e25c3C1a30C8fa272bb400"
             },
-            "index06v3a": {
-                "pool": "0x4bA87145C1fdBc277bB06D5AE2147C646B760565",
-                "pool_lp": "0x09f1Ab39467a9AE7c598a6659720EF586c7593Aa"
+            "index06v4": {
+                "pool": "0xF2EaffD50DA456De8A44e93406bC52875C313F02",
+                "pool_lp": "0xD4763d336703559E6391195Adb2B08e97bdBC2A2"
             }
 
         },

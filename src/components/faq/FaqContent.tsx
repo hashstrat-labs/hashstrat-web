@@ -39,13 +39,11 @@ const useStyles = makeStyles( theme => ({
     },
 
     accordion: {
-        backgroundColor: 'rgba(1,1,1,0)', 
+        backgroundColor: 'transparent', 
         borderBottom: `1px solid ${ theme.palette.type === 'light' ? 'rgba(0.6,0.6,0.6,0)': 'rgba(0.8,0.8,0.8,0)'} `, 
-        boxShadow: "0 0px 0px 0 rgba(0,0,0,0)",
+        boxShadow: "0 0px 0px 0 transparent",
         padding: 0,
 
-        // marginTop: 20,
-        // marginBottom: 20,
         marginLeft: 0,
         marginRight: 0,
     },
@@ -74,13 +72,10 @@ export const FaqContent = () => {
                             The protocol offers various strategies for managing your crypto portfolio, such as Trend Following, Rebalancing, Mean Reversion, or a combination of these. 
                         </li>
                         <li style={{ marginBottom: 10 }} >
-                            You select which assets you want to hold (e.g. BTC &amp; ETH), and your preferred portfolio management strategies, and the protocol will handle the rest. 
+                            You select which assets you want to hold (e.g. BTC &amp; ETH) and your preferred portfolio management strategies. The protocol will handle the rest.
                         </li>
                         <li style={{ marginBottom: 10 }} >
-                            Your chosen strategies determine your initial portfolio allocation and automate risk management.
-                        </li>
-                        <li style={{ marginBottom: 10 }} >
-                            They decide when it's time to buy more of your chosen assets and when to sell into USDC to offload some risk.
+                            Your portfolio management strategies determine your initial portfolio allocation and will adjust this allocation overtime, managing risk in your portfolio for you.
                         </li>
                         <li style={{ marginBottom: 10 }} >
                             HashStrat is a fully trustless and self-custodial, which means you stay in control of your assets at all times.
@@ -95,15 +90,15 @@ export const FaqContent = () => {
                 </AccordionSummary>
                 <AccordionDetails style={{ fontSize: 16 }} >
                     <Box>
-                        HashStrat can help you to be a more successful long-term investor.
+                        HashStrat can help you to be a more successful long-term investor:
                         <ul style={{ paddingLeft: 20}} >
                             <li style={{ marginBottom: 10 }} >Automating the management of your portfolio prevents FOMO-buying and panic-selling your investments at the wrong time. </li>
                             <li style={{ marginBottom: 10 }} >HashStrat strategies, with their built-in risk management, help to lock-in gains when price &amp; sentiment is high and scaling in your investments when price &amp; sentiment is low.</li>
                             <li style={{ marginBottom: 10 }} >Our strategies can dramatically reduce volatility &amp; drawdowns of your portfolio, whilst aiming for returns competitive with a simple holding strategy.</li>
-                            <li style={{ marginBottom: 10 }} >HashStrat will make it easier for you to stay invested for longer and reap greater rewards over time.</li>
+                            <li style={{ marginBottom: 10 }} >HashStrat will make it easier for you to stay invested for longer and reap greater profits over time.</li>
                         </ul>
 
-                        Being an honest DeFi protocol, HashStrat offers the benefits of real DeFi:
+                        Being an honest DeFi protocol, HashStrat offers all benefits of true DeFi:
                         <ul style={{  paddingLeft: 20 }} >
                             <li style={{ marginBottom: 10 }} > You stay in control of your funds at all times. </li>
                             <li style={{ marginBottom: 10 }} > No minimum investment requirements and other arbitrary constraints, no barriers to entry or to exit.</li>
@@ -121,12 +116,12 @@ export const FaqContent = () => {
 
             <Accordion className={classes.accordion}>
                 <AccordionSummary className={classes.accordionSummary} expandIcon={<ExpandMore style={{ color: '#656565' }} />} aria-controls="panel1bh-content" >
-                    <Typography className={classes.title} > What are HashStrat Strategies exactly? </Typography>
+                    <Typography className={classes.title} > What are HashStrat strategies exactly? </Typography>
                 </AccordionSummary>
                 <AccordionDetails style={{ fontSize: 16 }} >
                         <ul style={{ paddingLeft: 20, marginTop: 0 }} >
                             <li style={{ marginBottom: 10 }} > Strategies are set of rules, encoded into smart contracts, designed to manage the assets held in your digital asset portfolio.</li>
-                            <li style={{ marginBottom: 10 }} > Strategies decide when to allocate capital to risk assets (e.g. BTC, ETH) and when to trade back into a stable asset (USDC).</li>
+                            <li style={{ marginBottom: 10 }} > These rules determine when to allocate some capital to risk assets (e.g. BTC, ETH) and when to trade back into a stable asset (USDC).</li>
                             <li style={{ marginBottom: 10 }} > Their goal is to grow the value of your digital asset portfolio over time, while managing risk. </li>
                             <li style={{ marginBottom: 10 }} > HashStrat strategies are desigend to work best over the long term, capturing the appreciation of pristine crypto assets, like BTC and ETH, over the crypto market cycles. </li>
                         </ul>
@@ -136,13 +131,13 @@ export const FaqContent = () => {
 
             <Accordion className={classes.accordion}>
                 <AccordionSummary className={classes.accordionSummary} expandIcon={<ExpandMore style={{ color: '#656565' }} />} aria-controls="panel1bh-content" >
-                    <Typography className={classes.title} > Who is it for? </Typography>
+                    <Typography className={classes.title} > Who is HashStrat for? </Typography>
                 </AccordionSummary>
                 <AccordionDetails style={{ fontSize: 16 }} >
                         <ul style={{  paddingLeft: 20, marginTop: 0 }} >
                             <li style={{ marginBottom: 10 }} > <strong>Individual investors</strong> who want to automate the management of their crypto-portfolios, improve returns and reduce volatility, whilst retaining control over their digital assets.</li>
-                            <li style={{ marginBottom: 10 }} > <strong>DAO treasury managers</strong> who want to protect the value of their stablecoin holdings from FIAT currency debasement by getting some exposure to pristine crypto assets in a 100% trustless and verifiable way.</li>
-                            <li style={{ marginBottom: 10 }} > <strong>DeFi protocols</strong> who want to safely invest some of their liquidity on-chain with full security and transparency.</li>
+                            <li style={{ marginBottom: 10 }} > <strong>DAO and Corporate treasury managers</strong> who want to protect the value of their FIAT holdings from inflation and currency debasement, by getting some exposure to pristine crypto assets in a 100% trustless and verifiable way.</li>
+                            <li style={{ marginBottom: 10 }} > <strong>DeFi protocols</strong> who want to safely invest some of their liquidity on-chain, with full security and transparency.</li>
                         </ul>
                 </AccordionDetails>
             </Accordion>
