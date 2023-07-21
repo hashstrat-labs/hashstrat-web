@@ -524,7 +524,7 @@ export const Home = () => {
                 </Box>
 
                 <Box pb={3}>
-                    <Typography variant="h3" align="center"> Too many people loose <br/> money in crypto.</Typography>
+                    <Typography variant="h3" align="center"> Too many people lose <br/> money in crypto.</Typography>
                 </Box>
 
                 <Box pb={6}>

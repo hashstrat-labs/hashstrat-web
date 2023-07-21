@@ -220,7 +220,7 @@ export const FaqContent = () => {
                             <li style={{ marginBottom: 10 }} >
                                 Digital Asset risks: <br/>
                                 HashStat strategies trade a small number of top digital assets on the Polygon Network: USDC, WETH, WBTC.
-                                In case of catastrophic events on the Polygon Network and Polygon Bridge, these assets could, in theory, loose value against 
+                                In case of catastrophic events on the Polygon Network and Polygon Bridge, these assets could, in theory, lose value against 
                                 their pegged tokens (BTC on the Bitcoin network, ETH and USDC on the Ethereum network).
                             </li>
                             <li style={{ marginBottom: 10 }} >
